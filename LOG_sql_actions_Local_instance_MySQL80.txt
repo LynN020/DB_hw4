@@ -1,0 +1,2646 @@
+[1, 21:53:49] Apply changes to databasehw4: Applying object changes ...
+[1, 21:54:05] Applying changes to databasehw4...: 
+[1, 21:54:05] : Changes applied to databasehw4
+[1, 21:54:08] Apply changes to databasehw4: Changes applied
+[2, 21:55:05] Apply changes to databasehw4: Applying object changes ...
+[2, 21:55:05] Apply changes to databasehw4: No changes detected
+[1, 21:55:11] Apply changes to databasehw4: Applying object changes ...
+[1, 21:55:11] Apply changes to databasehw4: No changes detected
+[2, 21:56:03] CREATE SCHEMA 'databasehw4a': Running...
+[2, 21:56:03] CREATE SCHEMA 'databasehw4a': Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''databasehw4a'' at line 1
+[3, 21:58:20] Apply changes to new_schema: Applying object changes ...
+[3, 21:58:24] Apply changes to new_schema: 
+[4, 22:13:56] CREATE TABLE EMPLOYEE (
+    Fname          VARCHAR(15)      NOT NULL,
+    Minit          CHAR,
+    Lname          VARCHAR(15)      NOT NULL,
+    Ssn            CHAR(9)          NOT NULL,
+    Bdate          DATE,
+    Address        VARCHAR(30),
+    Sex            CHAR,
+    Salary         DECIMAL(10, 2),
+    Super_ssn      CHAR(9),
+    Dno            INT              NOT NULL,
+   CONSTRAINT EMP_PK
+    PRIMARY KEY (Ssn),
+   CONSTRAINT EMP_SUPER_FK
+    FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn)
+                 ON DELETE SET NULL ON UPDATE CASCADE,
+   CONSTRAINT EMP_DEPT_FK
+       FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber)
+                ON DELETE SET DEFAULT ON UPDATE CASCADE
+): Running...
+[4, 22:13:56] CREATE TABLE EMPLOYEE (
+    Fname          VARCHAR(15)      NOT NULL,
+    Minit          CHAR,
+    Lname          VARCHAR(15)      NOT NULL,
+    Ssn            CHAR(9)          NOT NULL,
+    Bdate          DATE,
+    Address        VARCHAR(30),
+    Sex            CHAR,
+    Salary         DECIMAL(10, 2),
+    Super_ssn      CHAR(9),
+    Dno            INT              NOT NULL,
+   CONSTRAINT EMP_PK
+    PRIMARY KEY (Ssn),
+   CONSTRAINT EMP_SUPER_FK
+    FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn)
+                 ON DELETE SET NULL ON UPDATE CASCADE,
+   CONSTRAINT EMP_DEPT_FK
+       FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber)
+                ON DELETE SET DEFAULT ON UPDATE CASCADE
+): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[5, 22:18:36] CREATE TABLE `databasehw4`.EMPLOYEE (
+     Fname          VARCHAR(15)      NOT NULL,
+     Minit          CHAR,
+     Lname          VARCHAR(15)      NOT NULL,
+     Ssn            CHAR(9)          NOT NULL,
+     Bdate          DATE,
+     Address        VARCHAR(30),
+     Sex            CHAR,
+     Salary         DECIMAL(10, 2),
+     Super_ssn      CHAR(9),
+     Dno            INT              NOT NULL,
+    CONSTRAINT EMP_PK
+     PRIMARY KEY (Ssn),
+    CONSTRAINT EMP_SUPER_FK
+     FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn)
+                  ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT EMP_DEPT_FK
+        FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber)
+                 ON DELETE SET DEFAULT ON UPDATE CASCADE ): Running...
+[5, 22:18:36] CREATE TABLE `databasehw4`.EMPLOYEE (
+     Fname          VARCHAR(15)      NOT NULL,
+     Minit          CHAR,
+     Lname          VARCHAR(15)      NOT NULL,
+     Ssn            CHAR(9)          NOT NULL,
+     Bdate          DATE,
+     Address        VARCHAR(30),
+     Sex            CHAR,
+     Salary         DECIMAL(10, 2),
+     Super_ssn      CHAR(9),
+     Dno            INT              NOT NULL,
+    CONSTRAINT EMP_PK
+     PRIMARY KEY (Ssn),
+    CONSTRAINT EMP_SUPER_FK
+     FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn)
+                  ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT EMP_DEPT_FK
+        FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber)
+                 ON DELETE SET DEFAULT ON UPDATE CASCADE ): Error Code: 1824. Failed to open the referenced table 'department'
+[6, 18:46:26] CREATE TABLE EMPLOYEE ( 
+	     Fname          VARCHAR(15)      NOT NULL,
+     Minit          CHAR,
+     Lname          VARCHAR(15)      NOT NULL,
+     Ssn            CHAR(9)          NOT NULL,
+     Bdate          DATE,
+     Address        VARCHAR(30),
+     Sex            CHAR,
+     Salary         DECIMAL(10, 2),
+     Super_ssn      CHAR(9),
+     Dno            INT              NOT NULL): Running...
+[6, 18:46:26] CREATE TABLE EMPLOYEE ( 
+	     Fname          VARCHAR(15)      NOT NULL,
+     Minit          CHAR,
+     Lname          VARCHAR(15)      NOT NULL,
+     Ssn            CHAR(9)          NOT NULL,
+     Bdate          DATE,
+     Address        VARCHAR(30),
+     Sex            CHAR,
+     Salary         DECIMAL(10, 2),
+     Super_ssn      CHAR(9),
+     Dno            INT              NOT NULL): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[7, 18:46:54] CREATE TABLE databasehw4.EMPLOYEE ( 
+	     Fname          VARCHAR(15)      NOT NULL,
+     Minit          CHAR,
+     Lname          VARCHAR(15)      NOT NULL,
+     Ssn            CHAR(9)          NOT NULL,
+     Bdate          DATE,
+     Address        VARCHAR(30),
+     Sex            CHAR,
+     Salary         DECIMAL(10, 2),
+     Super_ssn      CHAR(9),
+     Dno            INT              NOT NULL): Running...
+[7, 18:46:54] CREATE TABLE databasehw4.EMPLOYEE ( 
+	     Fname          VARCHAR(15)      NOT NULL,
+     Minit          CHAR,
+     Lname          VARCHAR(15)      NOT NULL,
+     Ssn            CHAR(9)          NOT NULL,
+     Bdate          DATE,
+     Address        VARCHAR(30),
+     Sex            CHAR,
+     Salary         DECIMAL(10, 2),
+     Super_ssn      CHAR(9),
+     Dno            INT              NOT NULL): 0 row(s) affected
+[8, 18:48:48] CREATE TABLE DEPARTMENT (
+    Dname          VARCHAR(15)      NOT NULL,
+    Dnumber        INT              NOT NULL,
+    Mgr_ssn        CHAR(9)          NOT NULL  DEFAULT '88866555',
+    Mgr_start_date DATE,
+   CONSTRAINT DEPT_PK
+    PRIMARY KEY (Dnumber),
+   CONSTRAINT DEPT_UK
+    UNIQUE (Dname),
+   CONSTRAINT DEPT_MGR_FK
+    FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE (Ssn)
+                 ON DELETE SET DEFAULT ON UPDATE CASCADE
+): Running...
+[8, 18:48:48] CREATE TABLE DEPARTMENT (
+    Dname          VARCHAR(15)      NOT NULL,
+    Dnumber        INT              NOT NULL,
+    Mgr_ssn        CHAR(9)          NOT NULL  DEFAULT '88866555',
+    Mgr_start_date DATE,
+   CONSTRAINT DEPT_PK
+    PRIMARY KEY (Dnumber),
+   CONSTRAINT DEPT_UK
+    UNIQUE (Dname),
+   CONSTRAINT DEPT_MGR_FK
+    FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE (Ssn)
+                 ON DELETE SET DEFAULT ON UPDATE CASCADE
+): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[9, 18:49:02] CREATE TABLE databasehw4.DEPARTMENT (
+    Dname          VARCHAR(15)      NOT NULL,
+    Dnumber        INT              NOT NULL,
+    Mgr_ssn        CHAR(9)          NOT NULL  DEFAULT '88866555',
+    Mgr_start_date DATE,
+   CONSTRAINT DEPT_PK
+    PRIMARY KEY (Dnumber),
+   CONSTRAINT DEPT_UK
+    UNIQUE (Dname),
+   CONSTRAINT DEPT_MGR_FK
+    FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE (Ssn)
+                 ON DELETE SET DEFAULT ON UPDATE CASCADE
+): Running...
+[9, 18:49:02] CREATE TABLE databasehw4.DEPARTMENT (
+    Dname          VARCHAR(15)      NOT NULL,
+    Dnumber        INT              NOT NULL,
+    Mgr_ssn        CHAR(9)          NOT NULL  DEFAULT '88866555',
+    Mgr_start_date DATE,
+   CONSTRAINT DEPT_PK
+    PRIMARY KEY (Dnumber),
+   CONSTRAINT DEPT_UK
+    UNIQUE (Dname),
+   CONSTRAINT DEPT_MGR_FK
+    FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE (Ssn)
+                 ON DELETE SET DEFAULT ON UPDATE CASCADE
+): Error Code: 1822. Failed to add the foreign key constraint. Missing index for constraint 'DEPT_MGR_FK' in the referenced table 'employee'
+[10, 18:51:28] CREATE TABLE databasehw4.DEPARTMENT (
+     Dname          VARCHAR(15)      NOT NULL,
+     Dnumber        INT              NOT NULL,
+     Mgr_ssn        CHAR(9)          NOT NULL  DEFAULT '88866555',
+     Mgr_start_date DATE): Running...
+[10, 18:51:28] CREATE TABLE databasehw4.DEPARTMENT (
+     Dname          VARCHAR(15)      NOT NULL,
+     Dnumber        INT              NOT NULL,
+     Mgr_ssn        CHAR(9)          NOT NULL  DEFAULT '88866555',
+     Mgr_start_date DATE): 0 row(s) affected
+[11, 19:02:43] CREATE TABLE DEPT_LOCATIONS (
+    Dnumber        INT              NOT NULL,
+    Dlocation      VARCHAR(15)      NOT NULL): Running...
+[11, 19:02:43] CREATE TABLE DEPT_LOCATIONS (
+    Dnumber        INT              NOT NULL,
+    Dlocation      VARCHAR(15)      NOT NULL): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[12, 19:03:09] CREATE TABLE databasehw4.DEPT_LOCATIONS (
+    Dnumber        INT              NOT NULL,
+    Dlocation      VARCHAR(15)      NOT NULL): Running...
+[12, 19:03:09] CREATE TABLE databasehw4.DEPT_LOCATIONS (
+    Dnumber        INT              NOT NULL,
+    Dlocation      VARCHAR(15)      NOT NULL): 0 row(s) affected
+[13, 19:04:59] CREATE TABLE databasehw.PROJECT (
+    Pname          VARCHAR(15)      NOT NULL,
+    Pnumber        INT              NOT NULL,
+    Plocation      VARCHAR(15),
+    Dnum           INT              NOT NULL
+): Running...
+[13, 19:04:59] CREATE TABLE databasehw.PROJECT (
+    Pname          VARCHAR(15)      NOT NULL,
+    Pnumber        INT              NOT NULL,
+    Plocation      VARCHAR(15),
+    Dnum           INT              NOT NULL
+): Error Code: 1049. Unknown database 'databasehw'
+[14, 19:05:12] CREATE TABLE databasehw4.PROJECT (
+    Pname          VARCHAR(15)      NOT NULL,
+    Pnumber        INT              NOT NULL,
+    Plocation      VARCHAR(15),
+    Dnum           INT              NOT NULL
+): Running...
+[14, 19:05:12] CREATE TABLE databasehw4.PROJECT (
+    Pname          VARCHAR(15)      NOT NULL,
+    Pnumber        INT              NOT NULL,
+    Plocation      VARCHAR(15),
+    Dnum           INT              NOT NULL
+): 0 row(s) affected
+[15, 19:06:45] CREATE TABLE databasehw4.WORKS_ON (
+    Essn           CHAR(9)          NOT NULL,
+    Pno            INT              NOT NULL,
+    Hours          DECIMAL(3, 1),
+   CONSTRAINT WORKS_ON_PK
+    PRIMARY KEY (Essn , Pno),
+   CONSTRAINT WORKS_ON_EMP_FK
+    FOREIGN KEY (Essn) REFERENCES EMPLOYEE (Ssn),
+   CONSTRAINT WORKS_ON_PROJ_FK
+    FOREIGN KEY (Pno) REFERENCES PROJECT (Pnumber)
+): Running...
+[15, 19:06:45] CREATE TABLE databasehw4.WORKS_ON (
+    Essn           CHAR(9)          NOT NULL,
+    Pno            INT              NOT NULL,
+    Hours          DECIMAL(3, 1),
+   CONSTRAINT WORKS_ON_PK
+    PRIMARY KEY (Essn , Pno),
+   CONSTRAINT WORKS_ON_EMP_FK
+    FOREIGN KEY (Essn) REFERENCES EMPLOYEE (Ssn),
+   CONSTRAINT WORKS_ON_PROJ_FK
+    FOREIGN KEY (Pno) REFERENCES PROJECT (Pnumber)
+): Error Code: 1822. Failed to add the foreign key constraint. Missing index for constraint 'WORKS_ON_EMP_FK' in the referenced table 'employee'
+[16, 19:08:00] CREATE TABLE databasehw4.WORKS_ON (
+    Essn           CHAR(9)          NOT NULL,
+    Pno            INT              NOT NULL,
+    Hours          DECIMAL(3, 1),
+   CONSTRAINT WORKS_ON_PK
+    PRIMARY KEY (Essn , Pno)
+): Running...
+[16, 19:08:00] CREATE TABLE databasehw4.WORKS_ON (
+    Essn           CHAR(9)          NOT NULL,
+    Pno            INT              NOT NULL,
+    Hours          DECIMAL(3, 1),
+   CONSTRAINT WORKS_ON_PK
+    PRIMARY KEY (Essn , Pno)
+): 0 row(s) affected
+[17, 19:15:38] CREATE TABLE databasehw4.DEPENDENT (
+    Essn           CHAR(9)          NOT NULL,
+    Dependent_name VARCHAR(15)      NOT NULL,
+    Sex            CHAR,
+    Bdate          DATE,
+    Relationship   VARCHAR(8),
+   CONSTRAINT DEPENDENT_PK
+    PRIMARY KEY (Essn , Dependent_name)
+): Running...
+[17, 19:15:38] CREATE TABLE databasehw4.DEPENDENT (
+    Essn           CHAR(9)          NOT NULL,
+    Dependent_name VARCHAR(15)      NOT NULL,
+    Sex            CHAR,
+    Bdate          DATE,
+    Relationship   VARCHAR(8),
+   CONSTRAINT DEPENDENT_PK
+    PRIMARY KEY (Essn , Dependent_name)
+): 0 row(s) affected
+[18, 19:32:09] ALTER TABLE EMPLOYEE
+	ADD(CONSTRAINT Emp_pk PRIMARY KEY(Ssn), 
+		CONSTRAINT Emp_super_fk FOREIGN KEY (Super_ssn) 
+			REFERENCES EMPLOYEE(Ssn) 
+			ON DELETE SET NULL ON UPDATE CASCADE): Running...
+[18, 19:32:09] ALTER TABLE EMPLOYEE
+	ADD(CONSTRAINT Emp_pk PRIMARY KEY(Ssn), 
+		CONSTRAINT Emp_super_fk FOREIGN KEY (Super_ssn) 
+			REFERENCES EMPLOYEE(Ssn) 
+			ON DELETE SET NULL ON UPDATE CASCADE): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[19, 19:32:32] ALTER TABLE databasehw4.EMPLOYEE
+	ADD(CONSTRAINT Emp_pk PRIMARY KEY(Ssn), 
+		CONSTRAINT Emp_super_fk FOREIGN KEY (Super_ssn) 
+			REFERENCES EMPLOYEE(Ssn) 
+			ON DELETE SET NULL ON UPDATE CASCADE): Running...
+[19, 19:32:32] ALTER TABLE databasehw4.EMPLOYEE
+	ADD(CONSTRAINT Emp_pk PRIMARY KEY(Ssn), 
+		CONSTRAINT Emp_super_fk FOREIGN KEY (Super_ssn) 
+			REFERENCES EMPLOYEE(Ssn) 
+			ON DELETE SET NULL ON UPDATE CASCADE): Error Code: 1215. Cannot add foreign key constraint
+[20, 20:11:02] ALTER TABLE databasehw4.EMPLOYEE
+	ADD(CONSTRAINT Emp_pk PRIMARY KEY(Ssn)): Running...
+[20, 20:11:02] ALTER TABLE databasehw4.EMPLOYEE
+	ADD(CONSTRAINT Emp_pk PRIMARY KEY(Ssn)): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[21, 20:14:41] ALTER TABLE databasehw4.EMPLOYEE
+	ADD(
+	CONSTRAINT Emp_super_fk FOREIGN KEY(Super_ssn) 
+		REFERENCES EMPLOYEE(Ssn) 
+		ON DELETE SET NULL ON UPDATE CASCADE): Running...
+[21, 20:14:41] ALTER TABLE databasehw4.EMPLOYEE
+	ADD(
+	CONSTRAINT Emp_super_fk FOREIGN KEY(Super_ssn) 
+		REFERENCES EMPLOYEE(Ssn) 
+		ON DELETE SET NULL ON UPDATE CASCADE): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[22, 20:20:08] ALTER TABLE databasehw4.DEPENDENT ADD(
+ CONSTRAINT DEPENDENT_EMP_FK
+	FOREIGN KEY (Essn) REFERENCES EMPLOYEE (Ssn)): Running...
+[22, 20:20:08] ALTER TABLE databasehw4.DEPENDENT ADD(
+ CONSTRAINT DEPENDENT_EMP_FK
+	FOREIGN KEY (Essn) REFERENCES EMPLOYEE (Ssn)): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[23, 20:22:40] show create table dependent: Running...
+[23, 20:22:40] show create table dependent: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[24, 20:23:11] show create table databasehw4.dependent: Running...
+[24, 20:23:11] show create table databasehw4.dependent: Fetching...
+[24, 20:23:11] show create table databasehw4.dependent: 1 row(s) returned
+[25, 20:33:04] ALTER TABLE databasehw4.PROJECT ADD(
+   CONSTRAINT PROJECT_PK
+    PRIMARY KEY (Pnumber),
+    UNIQUE (Pname)): Running...
+[25, 20:33:04] ALTER TABLE databasehw4.PROJECT ADD(
+   CONSTRAINT PROJECT_PK
+    PRIMARY KEY (Pnumber),
+    UNIQUE (Pname)): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[26, 20:33:47] ALTER TABLE databasehw4.WORKS_ON ADD(
+   CONSTRAINT WORKS_ON_EMP_FK
+    FOREIGN KEY (Essn) REFERENCES EMPLOYEE (Ssn),
+   CONSTRAINT WORKS_ON_PROJ_FK
+    FOREIGN KEY (Pno) REFERENCES PROJECT (Pnumber)): Running...
+[26, 20:33:47] ALTER TABLE databasehw4.WORKS_ON ADD(
+   CONSTRAINT WORKS_ON_EMP_FK
+    FOREIGN KEY (Essn) REFERENCES EMPLOYEE (Ssn),
+   CONSTRAINT WORKS_ON_PROJ_FK
+    FOREIGN KEY (Pno) REFERENCES PROJECT (Pnumber)): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[27, 20:46:30] ALTER TABLE databasehw4.DEPARTMENT ADD (
+    CONSTRAINT DEPT_PK
+     PRIMARY KEY (Dnumber),
+    CONSTRAINT DEPT_UK
+     UNIQUE (Dname)): Running...
+[27, 20:46:30] ALTER TABLE databasehw4.DEPARTMENT ADD (
+    CONSTRAINT DEPT_PK
+     PRIMARY KEY (Dnumber),
+    CONSTRAINT DEPT_UK
+     UNIQUE (Dname)): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[28, 21:12:43] ALTER TABLE databasehw4.DEPARTMENT ADD (     
+    CONSTRAINT DEPT_MGR_FK
+     FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE(Ssn)
+                  ON DELETE SET NULL ON UPDATE CASCADE): Running...
+[28, 21:12:43] ALTER TABLE databasehw4.DEPARTMENT ADD (     
+    CONSTRAINT DEPT_MGR_FK
+     FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE(Ssn)
+                  ON DELETE SET NULL ON UPDATE CASCADE): Error Code: 1830. Column 'Mgr_ssn' cannot be NOT NULL: needed in a foreign key constraint 'DEPT_MGR_FK' SET NULL
+[29, 21:17:51] ALTER TABLE databasehw4.DEPARTMENT ADD (     
+    CONSTRAINT DEPT_MGR_FK
+     FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE(Ssn)
+                  ON DELETE SET DEFAULT ON UPDATE CASCADE): Running...
+[29, 21:17:51] ALTER TABLE databasehw4.DEPARTMENT ADD (     
+    CONSTRAINT DEPT_MGR_FK
+     FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE(Ssn)
+                  ON DELETE SET DEFAULT ON UPDATE CASCADE): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[30, 22:28:08] ALTER TABLE databasehw4.EMPLOYEE ADD(
+    CONSTRAINT EMP_DEPT_FK
+        FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber)
+                 ON DELETE SET DEFAULT ON UPDATE CASCADE ): Running...
+[30, 22:28:08] ALTER TABLE databasehw4.EMPLOYEE ADD(
+    CONSTRAINT EMP_DEPT_FK
+        FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber)
+                 ON DELETE SET DEFAULT ON UPDATE CASCADE ): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[31, 22:30:40] ALTER TABLE databasehw4.PROJECT ADD (
+	CONSTRAINT PROJECT_DEPT_FK FOREIGN KEY(Dnum) REFERENCES DEPARTMENT(Dnumber)): Running...
+[31, 22:30:40] ALTER TABLE databasehw4.PROJECT ADD (
+	CONSTRAINT PROJECT_DEPT_FK FOREIGN KEY(Dnum) REFERENCES DEPARTMENT(Dnumber)): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[32, 22:37:34] ALTER TABLE databasehw4.DEPT_LOCATIONS ADD(
+	CONSTRAINT DEPT_LOCATIONS_PK PRIMARY KEY (Dnumber, Dlocation)): Running...
+[32, 22:37:34] ALTER TABLE databasehw4.DEPT_LOCATIONS ADD(
+	CONSTRAINT DEPT_LOCATIONS_PK PRIMARY KEY (Dnumber, Dlocation)): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[33, 22:40:40] ALTER TABLE databasehw4.DEPT_LOCATIONS ADD(
+	CONSTRAINT DEPT_LOCATIONS_DEPT_FK FOREIGN KEY(Dnumber) 
+		REFERENCES DEPARTMENT (Dnumber) 
+        ON DELETE CASCADE ON UPDATE CASCADE: Running...
+[33, 22:40:40] ALTER TABLE databasehw4.DEPT_LOCATIONS ADD(
+	CONSTRAINT DEPT_LOCATIONS_DEPT_FK FOREIGN KEY(Dnumber) 
+		REFERENCES DEPARTMENT (Dnumber) 
+        ON DELETE CASCADE ON UPDATE CASCADE: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 4
+[34, 18:21:03] ALTER TABLE databasehw4.DEPT_LOCATIONS ADD(
+	CONSTRAINT DEPT_LOCATIONS_DEPT_FK FOREIGN KEY(Dnumber) 
+		REFERENCES DEPARTMENT (Dnumber)
+                 ON DELETE CASCADE ON UPDATE CASCADE): Running...
+[34, 18:21:03] ALTER TABLE databasehw4.DEPT_LOCATIONS ADD(
+	CONSTRAINT DEPT_LOCATIONS_DEPT_FK FOREIGN KEY(Dnumber) 
+		REFERENCES DEPARTMENT (Dnumber)
+                 ON DELETE CASCADE ON UPDATE CASCADE): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[1, 18:50:39] INSERT INTO EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPERSSN,DNO) VALUES
+('John','B','Smith',123456789,'09-JAN-65','731 Fondren, Houston, TX','M',30000,333445555,5): Running...
+[1, 18:50:39] INSERT INTO EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPERSSN,DNO) VALUES
+('John','B','Smith',123456789,'09-JAN-65','731 Fondren, Houston, TX','M',30000,333445555,5): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[1, 19:09:56] INSERT INTO EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPERSSN,DNO) VALUES
+('John','B','Smith',123456789,'09-JAN-65','731 Fondren, Houston, TX','M',30000,333445555,5): Running...
+[1, 19:09:56] INSERT INTO EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPERSSN,DNO) VALUES
+('John','B','Smith',123456789,'09-JAN-65','731 Fondren, Houston, TX','M',30000,333445555,5): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[2, 19:10:18] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPERSSN,DNO) VALUES
+('John','B','Smith',123456789,'09-JAN-65','731 Fondren, Houston, TX','M',30000,333445555,5): Running...
+[2, 19:10:18] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPERSSN,DNO) VALUES
+('John','B','Smith',123456789,'09-JAN-65','731 Fondren, Houston, TX','M',30000,333445555,5): Error Code: 1054. Unknown column 'SUPERSSN' in 'field list'
+[3, 19:12:43] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789,'09-JAN-65','731 Fondren, Houston, TX','M',30000,333445555,5): Running...
+[3, 19:12:43] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789,'09-JAN-65','731 Fondren, Houston, TX','M',30000,333445555,5): Error Code: 1292. Incorrect date value: '09-JAN-65' for column 'Bdate' at row 1
+[4, 19:14:21] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789,date('09-JAN-65'),'731 Fondren, Houston, TX','M',30000,333445555,5): Running...
+[4, 19:14:21] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789,date('09-JAN-65'),'731 Fondren, Houston, TX','M',30000,333445555,5): Error Code: 1292. Incorrect datetime value: '09-JAN-65'
+[5, 19:38:13] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,333445555,5): Running...
+[5, 19:38:13] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,333445555,5): Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`databasehw4`.`employee`, CONSTRAINT `Emp_super_fk` FOREIGN KEY (`Super_ssn`) REFERENCES `employee` (`Ssn`) ON DELETE SET NULL ON UPDATE CASCADE)
+[6, 21:27:28] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,5): Running...
+[6, 21:27:28] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,5): Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`databasehw4`.`employee`, CONSTRAINT `EMP_DEPT_FK` FOREIGN KEY (`Dno`) REFERENCES `department` (`Dnumber`) ON UPDATE CASCADE)
+[7, 21:29:34] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,5): Running...
+[7, 21:29:34] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,5): Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`databasehw4`.`employee`, CONSTRAINT `EMP_DEPT_FK` FOREIGN KEY (`Dno`) REFERENCES `department` (`Dnumber`) ON UPDATE CASCADE)
+[8, 21:30:21] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,NULL): Running...
+[8, 21:30:21] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,NULL): Error Code: 1048. Column 'Dno' cannot be null
+[9, 21:44:48] INSERT INTO databasehw4.DEPARTMENT(Dnumber) VALUES(5): Running...
+[9, 21:44:48] INSERT INTO databasehw4.DEPARTMENT(Dnumber) VALUES(5): Error Code: 1364. Field 'Dname' doesn't have a default value
+[10, 22:03:44] INSERT INTO databasehw4.DEPARTMENT(Dnumber, Dname) VALUES(5, hq_temp): Running...
+[10, 22:03:44] INSERT INTO databasehw4.DEPARTMENT(Dnumber, Dname) VALUES(5, hq_temp): Error Code: 1054. Unknown column 'hq_temp' in 'field list'
+[11, 22:04:56] INSERT INTO databasehw4.DEPARTMENT(Dnumber, Dname) VALUES(5, 'hq_temp'): Running...
+[11, 22:04:56] INSERT INTO databasehw4.DEPARTMENT(Dnumber, Dname) VALUES(5, 'hq_temp'): Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`databasehw4`.`department`, CONSTRAINT `DEPT_MGR_FK` FOREIGN KEY (`Mgr_ssn`) REFERENCES `employee` (`Ssn`) ON UPDATE CASCADE)
+[12, 22:08:33] INSERT INTO databasehw4.DEPARTMENT(Dname, Dnumber) VALUES('hq temp ', 5): Running...
+[12, 22:08:33] INSERT INTO databasehw4.DEPARTMENT(Dname, Dnumber) VALUES('hq temp ', 5): Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`databasehw4`.`department`, CONSTRAINT `DEPT_MGR_FK` FOREIGN KEY (`Mgr_ssn`) REFERENCES `employee` (`Ssn`) ON UPDATE CASCADE)
+[13, 22:21:28] ALTER TABLE databasehw4.DEPARTMENT ADD(
+    Dname          VARCHAR(15), --      NOT NULL,
+    Dnumber        INT     --          NOT NULL,
+): Running...
+[13, 22:21:28] ALTER TABLE databasehw4.DEPARTMENT ADD(
+    Dname          VARCHAR(15), --      NOT NULL,
+    Dnumber        INT     --          NOT NULL,
+): Error Code: 1060. Duplicate column name 'Dname'
+[14, 22:25:41] ALTER TABLE databasehw4.DEPARTMENT MODIFY COLUMN 
+    Dname          VARCHAR(15) --      NOT NULL,: Running...
+[14, 22:25:42] ALTER TABLE databasehw4.DEPARTMENT MODIFY COLUMN 
+    Dname          VARCHAR(15) --      NOT NULL,: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[15, 22:25:58] CREATE SCHEMA `databasehw4a`: Running...
+[15, 22:25:58] CREATE SCHEMA `databasehw4a`: 1 row(s) affected
+[16, 22:25:58] CREATE TABLE `databasehw4`.EMPLOYEE (
+     Fname          VARCHAR(15)      NOT NULL,
+     Minit          CHAR,
+     Lname          VARCHAR(15)      NOT NULL,
+     Ssn            CHAR(9)          NOT NULL,
+     Bdate          DATE,
+     Address        VARCHAR(30),
+     Sex            CHAR,
+     Salary         DECIMAL(10, 2),
+     Super_ssn      CHAR(9),
+     Dno            INT              NOT NULL,
+    CONSTRAINT EMP_PK
+     PRIMARY KEY (Ssn),
+    CONSTRAINT EMP_SUPER_FK
+     FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn)
+                  ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT EMP_DEPT_FK
+        FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber)
+                 ON DELETE SET DEFAULT ON UPDATE CASCADE ): Running...
+[16, 22:25:58] CREATE TABLE `databasehw4`.EMPLOYEE (
+     Fname          VARCHAR(15)      NOT NULL,
+     Minit          CHAR,
+     Lname          VARCHAR(15)      NOT NULL,
+     Ssn            CHAR(9)          NOT NULL,
+     Bdate          DATE,
+     Address        VARCHAR(30),
+     Sex            CHAR,
+     Salary         DECIMAL(10, 2),
+     Super_ssn      CHAR(9),
+     Dno            INT              NOT NULL,
+    CONSTRAINT EMP_PK
+     PRIMARY KEY (Ssn),
+    CONSTRAINT EMP_SUPER_FK
+     FOREIGN KEY (Super_ssn) REFERENCES EMPLOYEE(Ssn)
+                  ON DELETE SET NULL ON UPDATE CASCADE,
+    CONSTRAINT EMP_DEPT_FK
+        FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber)
+                 ON DELETE SET DEFAULT ON UPDATE CASCADE ): Error Code: 1050. Table 'employee' already exists
+[17, 22:26:01] CREATE SCHEMA `databasehw4a`: Running...
+[17, 22:26:01] CREATE SCHEMA `databasehw4a`: Error Code: 1007. Can't create database 'databasehw4a'; database exists
+[18, 22:27:41] 3	14	22:25:41	ALTER TABLE databasehw4.DEPARTMENT MODIFY COLUMN 
+     Dname          VARCHAR(15) --      NOT NULL,	0 row(s) affected
+ Records: 0  Duplicates: 0  Warnings: 0	0.171 sec
+ 
+ 
+
+-- 0	11	22:04:56	INSERT INTO databasehw4.DEPARTMENT(Dnumber, Dname) VALUES(5, 'hq_temp')	
+-- Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`databasehw4`.`department`, 
+-- CONSTRAINT `DEPT_MGR_FK` FOREIGN KEY (`Mgr_ssn`) REFERENCES `employee` (`Ssn`) ON UPDATE CASCADE)	0.016 sec
+ 
+ALTER TABLE databasehw4.DEPARTMENT ADD (
+    CONSTRAINT DEPT_PK
+     PRIMARY KEY (Dnumber),
+    CONSTRAINT DEPT_UK
+     UNIQUE (Dname)): Running...
+[18, 22:27:41] 3	14	22:25:41	ALTER TABLE databasehw4.DEPARTMENT MODIFY COLUMN 
+     Dname          VARCHAR(15) --      NOT NULL,	0 row(s) affected
+ Records: 0  Duplicates: 0  Warnings: 0	0.171 sec
+ 
+ 
+
+-- 0	11	22:04:56	INSERT INTO databasehw4.DEPARTMENT(Dnumber, Dname) VALUES(5, 'hq_temp')	
+-- Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`databasehw4`.`department`, 
+-- CONSTRAINT `DEPT_MGR_FK` FOREIGN KEY (`Mgr_ssn`) REFERENCES `employee` (`Ssn`) ON UPDATE CASCADE)	0.016 sec
+ 
+ALTER TABLE databasehw4.DEPARTMENT ADD (
+    CONSTRAINT DEPT_PK
+     PRIMARY KEY (Dnumber),
+    CONSTRAINT DEPT_UK
+     UNIQUE (Dname)): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '3	14	22:25:41	ALTER TABLE databasehw4.DEPARTMENT MODIFY COLUMN 
+     Dname      ' at line 1
+[19, 22:29:35] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,NULL): Running...
+[19, 22:29:35] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,NULL): Error Code: 1048. Column 'Dno' cannot be null
+[20, 22:29:36] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,NULL): Running...
+[20, 22:29:36] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,NULL): Error Code: 1048. Column 'Dno' cannot be null
+[21, 22:30:22] ALTER TABLE databasehw4.DEPARTMENT MODIFY COLUMN 
+    Dname          VARCHAR(15) --      NOT NULL,: Running...
+[21, 22:30:22] ALTER TABLE databasehw4.DEPARTMENT MODIFY COLUMN 
+    Dname          VARCHAR(15) --      NOT NULL,: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[22, 22:30:46] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,NULL): Running...
+[22, 22:30:46] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,NULL): Error Code: 1048. Column 'Dno' cannot be null
+[23, 22:33:33] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS
+LIMIT 0, 1000
+: Running...
+[23, 22:33:33] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS
+LIMIT 0, 1000
+: Fetching...
+[23, 22:33:34] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS
+LIMIT 0, 1000
+: 1000 row(s) returned
+[24, 22:34:23] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'databasehw4' and table_name = 'employee'
+LIMIT 0, 1000
+: Running...
+[24, 22:34:23] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'databasehw4' and table_name = 'employee'
+LIMIT 0, 1000
+: Fetching...
+[24, 22:34:23] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'databasehw4' and table_name = 'employee'
+LIMIT 0, 1000
+: 10 row(s) returned
+[25, 22:36:11] ALTER TABLE dabtabasehw4.EMPLOYEE MODIFY COLUMN (
+	CONSTRAINT EMP_DEPT_FK FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber) 
+    ON DELETE SET NULL ON UPDATE CASCADE): Running...
+[25, 22:36:11] ALTER TABLE dabtabasehw4.EMPLOYEE MODIFY COLUMN (
+	CONSTRAINT EMP_DEPT_FK FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber) 
+    ON DELETE SET NULL ON UPDATE CASCADE): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(
+	CONSTRAINT EMP_DEPT_FK FOREIGN KEY(Dno) REFERENCES DEPARTMENT(Dnumber) 
+    O' at line 1
+[26, 23:03:57] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'databasehw4' and table_name = 'employee' AND COLUMN = 'DNO': Running...
+[26, 23:03:57] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'databasehw4' and table_name = 'employee' AND COLUMN = 'DNO': Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COLUMN = 'DNO'' at line 3
+[27, 23:04:07] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'databasehw4' and table_name = 'employee'
+LIMIT 0, 1000
+: Running...
+[27, 23:04:07] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'databasehw4' and table_name = 'employee'
+LIMIT 0, 1000
+: Fetching...
+[27, 23:04:07] SELECT * 
+    FROM
+  	INFORMATION_SCHEMA.COLUMNS WHERE table_schema = 'databasehw4' and table_name = 'employee'
+LIMIT 0, 1000
+: 10 row(s) returned
+[28, 23:05:36] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[28, 23:05:36] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[28, 23:05:36] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 0 row(s) returned
+[29, 23:09:08] CREATE SCHEMA `databasehw4a`: Running...
+[29, 23:09:08] CREATE SCHEMA `databasehw4a`: Error Code: 1007. Can't create database 'databasehw4a'; database exists
+[30, 23:09:16] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[30, 23:09:16] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[30, 23:09:16] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[31, 23:12:17] ALTER TABLE dabtabasehw4.EMPLOYEE DROP(
+	CONSTRAINT EMP_DEPT_FK ): Running...
+[31, 23:12:17] ALTER TABLE dabtabasehw4.EMPLOYEE DROP(
+	CONSTRAINT EMP_DEPT_FK ): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(
+	CONSTRAINT EMP_DEPT_FK )' at line 1
+[32, 23:12:44] ALTER TABLE dabtabasehw4.EMPLOYEE DROP
+	CONSTRAINT EMP_DEPT_FK: Running...
+[32, 23:12:44] ALTER TABLE dabtabasehw4.EMPLOYEE DROP
+	CONSTRAINT EMP_DEPT_FK: Error Code: 1049. Unknown database 'dabtabasehw4'
+[33, 23:12:53] ALTER TABLE databasehw4.EMPLOYEE DROP
+	CONSTRAINT EMP_DEPT_FK: Running...
+[33, 23:12:53] ALTER TABLE databasehw4.EMPLOYEE DROP
+	CONSTRAINT EMP_DEPT_FK: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[34, 23:14:13] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[34, 23:14:13] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[34, 23:14:13] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[35, 23:16:40] ALTER TABLE databasehw4.EMPLOYEE ADD
+	CONSTRAINT EMP_DEPT_FK FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber)
+    ON DELETE SET NULL ON UPDATE CASCADE: Running...
+[35, 23:16:40] ALTER TABLE databasehw4.EMPLOYEE ADD
+	CONSTRAINT EMP_DEPT_FK FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber)
+    ON DELETE SET NULL ON UPDATE CASCADE: Error Code: 1830. Column 'Dno' cannot be NOT NULL: needed in a foreign key constraint 'EMP_DEPT_FK' SET NULL
+[36, 01:03:56] SHOW ALTER TABLE databasehw4.EMPLOYEE: Running...
+[36, 01:03:56] SHOW ALTER TABLE databasehw4.EMPLOYEE: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ALTER TABLE databasehw4.EMPLOYEE' at line 1
+[37, 01:04:19] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[37, 01:04:19] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[37, 01:04:19] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[38, 01:04:52] ALTER TABLE databasehw4.DEPARTMENT MODIFY COLUMN 
+    Dname          VARCHAR(15): Running...
+[38, 01:04:52] ALTER TABLE databasehw4.DEPARTMENT MODIFY COLUMN 
+    Dname          VARCHAR(15): 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[39, 01:05:00] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[39, 01:05:00] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[39, 01:05:00] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[40, 01:06:10] Apply changes to employee: Applying object changes ...
+[40, 01:06:36] Applying changes to employee...: 
+[40, 01:06:36] : Changes applied to employee
+[40, 01:06:38] Apply changes to employee: Changes applied
+[41, 01:10:46] ALTER TABLE databasehw4.EMPLOYEE ADD
+	CONSTRAINT EMP_DEPT_FK FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber)
+    ON DELETE SET NULL ON UPDATE CASCADE: Running...
+[41, 01:10:46] ALTER TABLE databasehw4.EMPLOYEE ADD
+	CONSTRAINT EMP_DEPT_FK FOREIGN KEY (Dno) REFERENCES DEPARTMENT(Dnumber)
+    ON DELETE SET NULL ON UPDATE CASCADE: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[42, 01:21:20] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,NULL): Running...
+[42, 01:21:20] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('John','B','Smith',123456789, STR_TO_DATE('09-JAN-65', "%d-%b-%Y"),'731 Fondren, Houston, TX','M',30000,NULL,NULL): 1 row(s) affected
+[43, 01:35:37] INSERT INTO DEPARTMENT(DNAME,DNUMBER,MGRSSN,MGRSTARTDATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Running...
+[43, 01:35:37] INSERT INTO DEPARTMENT(DNAME,DNUMBER,MGRSSN,MGRSTARTDATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[44, 01:36:02] INSERT INTO databasehw4.(DNAME,DNUMBER,MGRSSN,MGRSTARTDATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Running...
+[44, 01:36:02] INSERT INTO databasehw4.(DNAME,DNUMBER,MGRSSN,MGRSTARTDATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(DNAME,DNUMBER,MGRSSN,MGRSTARTDATE) VALUES
+('Research',5,333445555,STR_TO_DATE('' at line 1
+[45, 01:36:17] INSERT INTO databasehw4.DEPARTMENT (DNAME,DNUMBER,MGRSSN,MGRSTARTDATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Running...
+[45, 01:36:17] INSERT INTO databasehw4.DEPARTMENT (DNAME,DNUMBER,MGRSSN,MGRSTARTDATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Error Code: 1054. Unknown column 'MGRSSN' in 'field list'
+[46, 01:36:40] INSERT INTO databasehw4.DEPARTMENT (DNAME,DNUMBER,MGR_SSN,MGRSTARTDATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Running...
+[46, 01:36:40] INSERT INTO databasehw4.DEPARTMENT (DNAME,DNUMBER,MGR_SSN,MGRSTARTDATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Error Code: 1054. Unknown column 'MGRSTARTDATE' in 'field list'
+[47, 01:37:03] INSERT INTO databasehw4.DEPARTMENT (DNAME,DNUMBER,MGR_SSN,MGR_START_DATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Running...
+[47, 01:37:03] INSERT INTO databasehw4.DEPARTMENT (DNAME,DNUMBER,MGR_SSN,MGR_START_DATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`databasehw4`.`department`, CONSTRAINT `DEPT_MGR_FK` FOREIGN KEY (`Mgr_ssn`) REFERENCES `employee` (`Ssn`) ON UPDATE CASCADE)
+[48, 01:39:58] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[48, 01:39:58] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[48, 01:39:58] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[49, 01:45:17] INSERT INTO EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Franklin','T','Wong',333445555,'08-DEC-55','635 Voss, Houston, TX','M',40000,NULL,NULL): Running...
+[49, 01:45:17] INSERT INTO EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Franklin','T','Wong',333445555,'08-DEC-55','635 Voss, Houston, TX','M',40000,NULL,NULL): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[50, 01:45:45] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Franklin','T','Wong',333445555,'08-DEC-55','635 Voss, Houston, TX','M',40000,NULL,NULL): Running...
+[50, 01:45:45] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Franklin','T','Wong',333445555,'08-DEC-55','635 Voss, Houston, TX','M',40000,NULL,NULL): Error Code: 1292. Incorrect date value: '08-DEC-55' for column 'Bdate' at row 1
+[51, 01:46:07] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Franklin','T','Wong',333445555,STR_TO_DATE('08-DEC-55'),'635 Voss, Houston, TX','M',40000,NULL,NULL): Running...
+[51, 01:46:07] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Franklin','T','Wong',333445555,STR_TO_DATE('08-DEC-55'),'635 Voss, Houston, TX','M',40000,NULL,NULL): Error Code: 1582. Incorrect parameter count in the call to native function 'STR_TO_DATE'
+[52, 01:46:22] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Franklin','T','Wong',333445555,STR_TO_DATE('08-DEC-55', "%d-%b-%Y"),'635 Voss, Houston, TX','M',40000,NULL,NULL): Running...
+[52, 01:46:22] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Franklin','T','Wong',333445555,STR_TO_DATE('08-DEC-55', "%d-%b-%Y"),'635 Voss, Houston, TX','M',40000,NULL,NULL): 1 row(s) affected
+[53, 01:53:07] INSERT INTO EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPERSSN,DNO) VALUES
+('Alicia','J','Zelaya',999887777,STR_TO_DATE('19-JAN-68',"%d-%b-%Y"), '3321 Castle, Spring','F',25000,NULL,NULL): Running...
+[53, 01:53:07] INSERT INTO EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPERSSN,DNO) VALUES
+('Alicia','J','Zelaya',999887777,STR_TO_DATE('19-JAN-68',"%d-%b-%Y"), '3321 Castle, Spring','F',25000,NULL,NULL): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[54, 01:53:32] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPERSSN,DNO) VALUES
+('Alicia','J','Zelaya',999887777,STR_TO_DATE('19-JAN-68',"%d-%b-%Y"), '3321 Castle, Spring','F',25000,NULL,NULL): Running...
+[54, 01:53:32] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPERSSN,DNO) VALUES
+('Alicia','J','Zelaya',999887777,STR_TO_DATE('19-JAN-68',"%d-%b-%Y"), '3321 Castle, Spring','F',25000,NULL,NULL): Error Code: 1054. Unknown column 'SUPERSSN' in 'field list'
+[55, 01:54:02] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Alicia','J','Zelaya',999887777,STR_TO_DATE('19-JAN-68',"%d-%b-%Y"), '3321 Castle, Spring','F',25000,NULL,NULL): Running...
+[55, 01:54:02] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Alicia','J','Zelaya',999887777,STR_TO_DATE('19-JAN-68',"%d-%b-%Y"), '3321 Castle, Spring','F',25000,NULL,NULL): 1 row(s) affected
+[56, 01:55:03] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Alicia','J','Zelaya',999887777,STR_TO_DATE('19-JAN-68',"%d-%b-%Y"), '3321 Castle, Spring','F',25000,NULL,NULL): Running...
+[56, 01:55:03] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Alicia','J','Zelaya',999887777,STR_TO_DATE('19-JAN-68',"%d-%b-%Y"), '3321 Castle, Spring','F',25000,NULL,NULL): Error Code: 1062. Duplicate entry '999887777' for key 'employee.PRIMARY'
+[57, 01:55:20] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Jennifer','S','Wallace',987654321,STR_TO_DATE('20-JUN-41', "%d-%b-%Y"),'291 Berry, Bellaire, TX','F',43000,NULL,NULL): Running...
+[57, 01:55:20] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Jennifer','S','Wallace',987654321,STR_TO_DATE('20-JUN-41', "%d-%b-%Y"),'291 Berry, Bellaire, TX','F',43000,NULL,NULL): 1 row(s) affected
+[58, 01:55:25] CREATE SCHEMA `databasehw4a`: Running...
+[58, 01:55:25] CREATE SCHEMA `databasehw4a`: Error Code: 1007. Can't create database 'databasehw4a'; database exists
+[59, 01:55:43] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Ramesh','K','Narayan',666884444,STR_TO_DATE('15-SEP-62' , "%d-%b-%Y"),'975 Fire Oak, Humble, TX','M',38000, NULL,NULL): Running...
+[59, 01:55:43] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Ramesh','K','Narayan',666884444,STR_TO_DATE('15-SEP-62' , "%d-%b-%Y"),'975 Fire Oak, Humble, TX','M',38000, NULL,NULL): 1 row(s) affected
+[60, 01:55:51] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Joyce','A','English',453453453, STR_TO_DATE('31-JUL-72', "%d-%b-%Y"),'5631 Rice Houston','F',25000,NULL,NULL): Running...
+[60, 01:55:51] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Joyce','A','English',453453453, STR_TO_DATE('31-JUL-72', "%d-%b-%Y"),'5631 Rice Houston','F',25000,NULL,NULL): 1 row(s) affected
+[61, 01:55:51] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Ahmad','V','Jabbar',987987987,STR_TO_DATE('29-MAR-69', "%d-%b-%Y"),'980 Dallas, Houston','M',25000,NULL,NULL): Running...
+[61, 01:55:51] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('Ahmad','V','Jabbar',987987987,STR_TO_DATE('29-MAR-69', "%d-%b-%Y"),'980 Dallas, Houston','M',25000,NULL,NULL): 1 row(s) affected
+[62, 01:55:51] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('James','E','Borg',888665555,STR_TO_DATE('10-NOV-37', "%d-%b-%Y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): Running...
+[62, 01:55:51] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('James','E','Borg',888665555,STR_TO_DATE('10-NOV-37', "%d-%b-%Y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): 1 row(s) affected
+[63, 02:01:44] ALTER TABLE `databasehw4`.`department` 
+CHANGE COLUMN `Mgr_ssn` `Mgr_ssn` INT NULL: Running...
+[63, 02:01:44] ALTER TABLE `databasehw4`.`department` 
+CHANGE COLUMN `Mgr_ssn` `Mgr_ssn` INT NULL: Error Code: 3780. Referencing column 'Mgr_ssn' and referenced column 'Ssn' in foreign key constraint 'DEPT_MGR_FK' are incompatible.
+[64, 02:02:12] ALTER TABLE databasehw4.DEPARTMENT DROP 
+	CONSTRAINT DEPT_MGR_FK: Running...
+[64, 02:02:12] ALTER TABLE databasehw4.DEPARTMENT DROP 
+	CONSTRAINT DEPT_MGR_FK: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[65, 02:03:16] ALTER TABLE `databasehw4`.`department` 
+CHANGE COLUMN `Mgr_ssn` `Mgr_ssn` INT NULL: Running...
+[65, 02:03:16] ALTER TABLE `databasehw4`.`department` 
+CHANGE COLUMN `Mgr_ssn` `Mgr_ssn` INT NULL: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[66, 02:04:14] ALTER TABLE databasehw4.EMPLOYEE ADD
+	CONSTRAINT DEPT_MGR_FK FOREIGN KEY (Mgr_ssn) REFERENCES DEPARTMENT(Ssn)
+    ON DELETE SET NULL ON UPDATE CASCADE: Running...
+[66, 02:04:14] ALTER TABLE databasehw4.EMPLOYEE ADD
+	CONSTRAINT DEPT_MGR_FK FOREIGN KEY (Mgr_ssn) REFERENCES DEPARTMENT(Ssn)
+    ON DELETE SET NULL ON UPDATE CASCADE: Error Code: 1072. Key column 'Mgr_ssn' doesn't exist in table
+[67, 02:04:38] ALTER TABLE databasehw4.DEPARTMENT ADD
+	CONSTRAINT DEPT_MGR_FK FOREIGN KEY (Mgr_ssn) REFERENCES DEPARTMENT(Ssn)
+    ON DELETE SET NULL ON UPDATE CASCADE: Running...
+[67, 02:04:38] ALTER TABLE databasehw4.DEPARTMENT ADD
+	CONSTRAINT DEPT_MGR_FK FOREIGN KEY (Mgr_ssn) REFERENCES DEPARTMENT(Ssn)
+    ON DELETE SET NULL ON UPDATE CASCADE: Error Code: 3734. Failed to add the foreign key constraint. Missing column 'Ssn' for constraint 'DEPT_MGR_FK' in the referenced table 'department'
+[68, 02:06:09] ALTER TABLE databasehw4.DEPARTMENT ADD
+	CONSTRAINT DEPT_MGR_FK FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE(Ssn)
+    ON DELETE SET NULL ON UPDATE CASCADE: Running...
+[68, 02:06:09] ALTER TABLE databasehw4.DEPARTMENT ADD
+	CONSTRAINT DEPT_MGR_FK FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE(Ssn)
+    ON DELETE SET NULL ON UPDATE CASCADE: Error Code: 3780. Referencing column 'Mgr_ssn' and referenced column 'Ssn' in foreign key constraint 'DEPT_MGR_FK' are incompatible.
+[69, 02:06:52] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[69, 02:06:52] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[69, 02:06:52] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[70, 02:07:30] ALTER TABLE databasehw4.DEPARTMENT DROP 
+	CONSTRAINT DEPT_MGR_FK: Running...
+[70, 02:07:30] ALTER TABLE databasehw4.DEPARTMENT DROP 
+	CONSTRAINT DEPT_MGR_FK: Error Code: 3940. Constraint 'DEPT_MGR_FK' does not exist.
+[71, 02:07:39] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[71, 02:07:39] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[71, 02:07:39] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[72, 20:44:27] ALTER TABLE databasehw4.DEPARTMENT ADD
+	CONSTRAINT DEPT_MGR_FK FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE(Ssn)
+    ON DELETE SET NULL ON UPDATE CASCADE: Running...
+[72, 20:44:27] ALTER TABLE databasehw4.DEPARTMENT ADD
+	CONSTRAINT DEPT_MGR_FK FOREIGN KEY (Mgr_ssn) REFERENCES EMPLOYEE(Ssn)
+    ON DELETE SET NULL ON UPDATE CASCADE: Error Code: 3780. Referencing column 'Mgr_ssn' and referenced column 'Ssn' in foreign key constraint 'DEPT_MGR_FK' are incompatible.
+[73, 20:45:04] INSERT INTO databasehw4.DEPARTMENT (DNAME,DNUMBER,MGR_SSN,MGR_START_DATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): Running...
+[73, 20:45:04] INSERT INTO databasehw4.DEPARTMENT (DNAME,DNUMBER,MGR_SSN,MGR_START_DATE) VALUES
+('Research',5,333445555,STR_TO_DATE('22-MAY-88', "%d-%b-%Y")): 1 row(s) affected
+[74, 20:45:27] select * from databasehw4.department
+LIMIT 0, 1000
+: Running...
+[74, 20:45:27] select * from databasehw4.department
+LIMIT 0, 1000
+: Fetching...
+[74, 20:45:27] select * from databasehw4.department
+LIMIT 0, 1000
+: 1 row(s) returned
+[75, 20:49:23] select count(*) from databasehw4.department
+LIMIT 0, 1000
+: Running...
+[75, 20:49:23] select count(*) from databasehw4.department
+LIMIT 0, 1000
+: Fetching...
+[75, 20:49:23] select count(*) from databasehw4.department
+LIMIT 0, 1000
+: 1 row(s) returned
+[76, 20:56:09] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: Running...
+[76, 20:56:09] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: Fetching...
+[76, 20:56:09] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: 8 row(s) returned
+[77, 21:16:21] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('teste','tester','tester',999999999,DATE_FORMAT('08-DEC-55', "%d-%b-%Y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): Running...
+[77, 21:16:21] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('teste','tester','tester',999999999,DATE_FORMAT('08-DEC-55', "%d-%b-%Y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): Error Code: 1406. Data too long for column 'Minit' at row 1
+[78, 21:16:33] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('teste','t','tester',999999999,DATE_FORMAT('08-DEC-55', "%d-%b-%Y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): Running...
+[78, 21:16:33] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('teste','t','tester',999999999,DATE_FORMAT('08-DEC-55', "%d-%b-%Y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): Error Code: 1292. Incorrect datetime value: '08-DEC-55'
+[79, 21:17:22] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('teste','t','tester',999999999,DATE_FORMAT('08-DEC-55', "%d-%b-%y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): Running...
+[79, 21:17:22] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('teste','t','tester',999999999,DATE_FORMAT('08-DEC-55', "%d-%b-%y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): Error Code: 1292. Incorrect datetime value: '08-DEC-55'
+[80, 21:21:43] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('teste','t','tester',999999999,DATE_FORMAT('08-DEC-1955', "%d-%b-%Y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): Running...
+[80, 21:21:43] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('teste','t','tester',999999999,DATE_FORMAT('08-DEC-1955', "%d-%b-%Y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): Error Code: 1292. Incorrect datetime value: '08-DEC-1955'
+[81, 21:21:54] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('teste','t','tester',999999999,STR_TO_DATE('08-DEC-1955', "%d-%b-%Y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): Running...
+[81, 21:21:54] INSERT INTO databasehw4.EMPLOYEE(FNAME, MINIT,LNAME,SSN,BDATE,ADDRESS,SEX,SALARY,SUPER_SSN,DNO) VALUES
+('teste','t','tester',999999999,STR_TO_DATE('08-DEC-1955', "%d-%b-%Y"),'450 Stone, Houston, TX','M',55000,NULL,NULL): 1 row(s) affected
+[82, 21:22:04] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: Running...
+[82, 21:22:04] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: Fetching...
+[82, 21:22:05] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: 9 row(s) returned
+[83, 21:23:50] ALTER TABLE DATABASEHW4.EMPLOYEE DROP COLUMN 999999999: Running...
+[83, 21:23:50] ALTER TABLE DATABASEHW4.EMPLOYEE DROP COLUMN 999999999: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '999999999' at line 1
+[84, 21:24:25] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[84, 21:24:25] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[84, 21:24:25] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[85, 21:26:25] DELETE FROM databasehw4.EMPLOYEE WHERE SSN = 999999999: Running...
+[85, 21:26:25] DELETE FROM databasehw4.EMPLOYEE WHERE SSN = 999999999: Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column. Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
+[86, 21:32:59] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: Running...
+[86, 21:32:59] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: Fetching...
+[86, 21:32:59] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: 9 row(s) returned
+[87, 21:33:08] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[87, 21:33:08] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[87, 21:33:08] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[88, 21:34:12] DELETE FROM databasehw4.EMPLOYEE WHERE SSN = 999999999 and Super_ssn is null and dno is null: Running...
+[88, 21:34:12] DELETE FROM databasehw4.EMPLOYEE WHERE SSN = 999999999 and Super_ssn is null and dno is null: 1 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+[89, 21:35:25] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: Running...
+[89, 21:35:25] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: Fetching...
+[89, 21:35:25] SELECT * FROM DATABASEHW4.EMPLOYEE
+LIMIT 0, 1000
+: 8 row(s) returned
+[90, 21:44:29] UPDATE databasehw4.employee set bdate = STR_TO_DATE('09-JAN-1965', "%d-%b-%Y") where ssn = 123456789: Running...
+[90, 21:44:29] UPDATE databasehw4.employee set bdate = STR_TO_DATE('09-JAN-1965', "%d-%b-%Y") where ssn = 123456789: Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column. Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
+[91, 21:45:15] UPDATE databasehw4.employee set bdate = STR_TO_DATE('09-JAN-1965', "%d-%b-%Y") where ssn = 123456789 
+	and Super_ssn is null and dno is null: Running...
+[91, 21:45:15] UPDATE databasehw4.employee set bdate = STR_TO_DATE('09-JAN-1965', "%d-%b-%Y") where ssn = 123456789 
+	and Super_ssn is null and dno is null: 1 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 1  Warnings: 3
+[92, 21:45:28] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[92, 21:45:28] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[92, 21:45:28] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[93, 21:46:14] UPDATE databasehw4.employee set bdate = STR_TO_DATE('08-DEC-55', "%d-%b-%Y") where ssn = 333445555 
+	and Super_ssn is null and dno is null: Running...
+[93, 21:46:14] UPDATE databasehw4.employee set bdate = STR_TO_DATE('08-DEC-55', "%d-%b-%Y") where ssn = 333445555 
+	and Super_ssn is null and dno is null: 0 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 0  Warnings: 3
+[94, 21:46:30] UPDATE databasehw4.employee set bdate = STR_TO_DATE('08-DEC-55', "%d-%b-%Y") where ssn = 333445555: Running...
+[94, 21:46:30] UPDATE databasehw4.employee set bdate = STR_TO_DATE('08-DEC-55', "%d-%b-%Y") where ssn = 333445555: Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column. Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
+[95, 21:46:50] UPDATE databasehw4.employee set bdate = STR_TO_DATE('08-DEC-1955', "%d-%b-%Y") where ssn = 333445555
+	and Super_ssn is null and dno is null: Running...
+[95, 21:46:50] UPDATE databasehw4.employee set bdate = STR_TO_DATE('08-DEC-1955', "%d-%b-%Y") where ssn = 333445555
+	and Super_ssn is null and dno is null: 1 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 1  Warnings: 3
+[96, 21:47:16] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[96, 21:47:16] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[96, 21:47:16] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[97, 21:47:44] UPDATE databasehw4.employee set bdate = STR_TO_DATE('19-JAN-1968',"%d-%b-%Y") where ssn = 999887777
+	and Super_ssn is null and dno is null: Running...
+[97, 21:47:44] UPDATE databasehw4.employee set bdate = STR_TO_DATE('19-JAN-1968',"%d-%b-%Y") where ssn = 999887777
+	and Super_ssn is null and dno is null: 1 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 1  Warnings: 3
+[98, 21:48:18] UPDATE databasehw4.employee set bdate = STR_TO_DATE('20-JUN-41', "%d-%b-%Y") where ssn = 987654321
+	and Super_ssn is null and dno is null: Running...
+[98, 21:48:18] UPDATE databasehw4.employee set bdate = STR_TO_DATE('20-JUN-41', "%d-%b-%Y") where ssn = 987654321
+	and Super_ssn is null and dno is null: 0 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 0  Warnings: 3
+[99, 21:48:35] UPDATE databasehw4.employee set bdate = STR_TO_DATE('20-JUN-1941', "%d-%b-%Y") where ssn = 987654321
+	and Super_ssn is null and dno is null: Running...
+[99, 21:48:35] UPDATE databasehw4.employee set bdate = STR_TO_DATE('20-JUN-1941', "%d-%b-%Y") where ssn = 987654321
+	and Super_ssn is null and dno is null: 1 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 1  Warnings: 3
+[100, 21:49:03] UPDATE databasehw4.employee set bdate = STR_TO_DATE('15-SEP-1962' , "%d-%b-%Y") where ssn = 666884444
+	and Super_ssn is null and dno is null: Running...
+[100, 21:49:03] UPDATE databasehw4.employee set bdate = STR_TO_DATE('15-SEP-1962' , "%d-%b-%Y") where ssn = 666884444
+	and Super_ssn is null and dno is null: 1 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 1  Warnings: 3
+[101, 21:49:23] UPDATE databasehw4.employee set bdate = STR_TO_DATE('31-JUL-72', "%d-%b-%Y") where ssn = 453453453
+	and Super_ssn is null and dno is null: Running...
+[101, 21:49:23] UPDATE databasehw4.employee set bdate = STR_TO_DATE('31-JUL-72', "%d-%b-%Y") where ssn = 453453453
+	and Super_ssn is null and dno is null: 0 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 0  Warnings: 3
+[102, 21:49:31] UPDATE databasehw4.employee set bdate = STR_TO_DATE('31-JUL-1972', "%d-%b-%Y") where ssn = 453453453
+	and Super_ssn is null and dno is null: Running...
+[102, 21:49:31] UPDATE databasehw4.employee set bdate = STR_TO_DATE('31-JUL-1972', "%d-%b-%Y") where ssn = 453453453
+	and Super_ssn is null and dno is null: 0 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 0  Warnings: 3
+[103, 21:50:01] UPDATE databasehw4.employee set bdate = STR_TO_DATE('29-MAR-1969', "%d-%b-%Y") where ssn = 987987987
+	and Super_ssn is null and dno is null: Running...
+[103, 21:50:01] UPDATE databasehw4.employee set bdate = STR_TO_DATE('29-MAR-1969', "%d-%b-%Y") where ssn = 987987987
+	and Super_ssn is null and dno is null: 1 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 1  Warnings: 3
+[104, 21:50:13] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[104, 21:50:13] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[104, 21:50:13] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[105, 21:53:15] UPDATE databasehw4.employee set bdate = STR_TO_DATE('10-NOV-1937', "%d-%b-%Y") where ssn = 888665555
+	and Super_ssn is null and dno is null: Running...
+[105, 21:53:15] UPDATE databasehw4.employee set bdate = STR_TO_DATE('10-NOV-1937', "%d-%b-%Y") where ssn = 888665555
+	and Super_ssn is null and dno is null: 1 row(s) affected, 3 warning(s):
+1739 Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'Emp_super_fk' due to type or collation conversion on field 'Ssn'
+1739 Cannot use range access on index 'EMP_DEPT_FK' due to type or collation conversion on field 'Ssn'
+Rows matched: 1  Changed: 1  Warnings: 3
+[106, 21:53:22] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[106, 21:53:22] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[106, 21:53:22] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[107, 21:56:06] SELECT * FROM databasehw4.department
+LIMIT 0, 1000
+: Running...
+[107, 21:56:06] SELECT * FROM databasehw4.department
+LIMIT 0, 1000
+: Fetching...
+[107, 21:56:06] SELECT * FROM databasehw4.department
+LIMIT 0, 1000
+: 1 row(s) returned
+[108, 21:57:05] INSERT INTO databasehw4.DEPARTMENT(DNAME,DNUMBER,MGRSSN,MGRSTARTDATE) VALUES
+('Headquarters',1,888665555,STR_TO_DATE('19-JUN-1981', "%d-%b-%Y")): Running...
+[108, 21:57:05] INSERT INTO databasehw4.DEPARTMENT(DNAME,DNUMBER,MGRSSN,MGRSTARTDATE) VALUES
+('Headquarters',1,888665555,STR_TO_DATE('19-JUN-1981', "%d-%b-%Y")): Error Code: 1054. Unknown column 'MGRSSN' in 'field list'
+[109, 21:57:18] INSERT INTO databasehw4.DEPARTMENT(DNAME,DNUMBER,MGR_SSN,MGR_START_DATE) VALUES
+('Headquarters',1,888665555,STR_TO_DATE('19-JUN-1981', "%d-%b-%Y")): Running...
+[109, 21:57:18] INSERT INTO databasehw4.DEPARTMENT(DNAME,DNUMBER,MGR_SSN,MGR_START_DATE) VALUES
+('Headquarters',1,888665555,STR_TO_DATE('19-JUN-1981', "%d-%b-%Y")): 1 row(s) affected
+[110, 21:57:47] INSERT INTO DEPARTMENT(DNAME,DNUMBER,MGR_SSN,MGR_START_DATE) VALUES
+('Administration',4,987654321,STR_TO_DATE('01-JAN-95',"%d-%b-%Y")): Running...
+[110, 21:57:47] INSERT INTO DEPARTMENT(DNAME,DNUMBER,MGR_SSN,MGR_START_DATE) VALUES
+('Administration',4,987654321,STR_TO_DATE('01-JAN-95',"%d-%b-%Y")): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[111, 21:58:02] INSERT INTO databasehw4.DEPARTMENT(DNAME,DNUMBER,MGR_SSN,MGR_START_DATE) VALUES
+('Administration',4,987654321,STR_TO_DATE('01-JAN-1995',"%d-%b-%Y")): Running...
+[111, 21:58:02] INSERT INTO databasehw4.DEPARTMENT(DNAME,DNUMBER,MGR_SSN,MGR_START_DATE) VALUES
+('Administration',4,987654321,STR_TO_DATE('01-JAN-1995',"%d-%b-%Y")): 1 row(s) affected
+[112, 21:58:54] SELECT * FROM databasehw4.department
+LIMIT 0, 1000
+: Running...
+[112, 21:58:54] SELECT * FROM databasehw4.department
+LIMIT 0, 1000
+: Fetching...
+[112, 21:58:54] SELECT * FROM databasehw4.department
+LIMIT 0, 1000
+: 3 row(s) returned
+[113, 21:59:54] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[113, 21:59:54] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[113, 21:59:54] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[114, 22:10:14] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[114, 22:10:14] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[114, 22:10:14] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[115, 22:10:19] ALTER TABLE databasehw4.dept_locations DROP CONSTRAINT dept_locations_dept_fk: Running...
+[115, 22:10:19] ALTER TABLE databasehw4.dept_locations DROP CONSTRAINT dept_locations_dept_fk: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[116, 22:10:32] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Running...
+[116, 22:10:32] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Fetching...
+[116, 22:10:32] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: 0 row(s) returned
+[117, 22:10:32] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Running...
+[117, 22:10:32] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Fetching...
+[117, 22:10:32] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: 0 row(s) returned
+[118, 22:10:40] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT NULL: Running...
+[118, 22:10:40] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT NULL: Error Code: 1171. All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+[119, 22:11:43] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT UNIQUE: Running...
+[119, 22:11:43] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT UNIQUE: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[120, 22:13:30] ALTER TABLE databasehw4.dept_locations ADD
+	CONSTRAINT dept_locations_dept_fk FOREIGN KEY (Dnumber) REFERENCES EMPLOYEE(Dnumber)
+    ON DELETE SET NULL ON UPDATE CASCADE: Running...
+[120, 22:13:30] ALTER TABLE databasehw4.dept_locations ADD
+	CONSTRAINT dept_locations_dept_fk FOREIGN KEY (Dnumber) REFERENCES EMPLOYEE(Dnumber)
+    ON DELETE SET NULL ON UPDATE CASCADE: Error Code: 1830. Column 'Dnumber' cannot be NOT NULL: needed in a foreign key constraint 'dept_locations_dept_fk' SET NULL
+[121, 22:13:58] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Running...
+[121, 22:13:58] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Fetching...
+[121, 22:13:58] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: 0 row(s) returned
+[122, 22:14:08] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[122, 22:14:08] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[122, 22:14:08] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[123, 22:14:43] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES
+(1,'Houston'): Running...
+[123, 22:14:43] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES
+(1,'Houston'): 1 row(s) affected
+[124, 22:14:48] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Running...
+[124, 22:14:48] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Fetching...
+[124, 22:14:48] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: 1 row(s) returned
+[125, 22:23:01] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (4,'Stafford'): Running...
+[125, 22:23:01] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (4,'Stafford'): 1 row(s) affected
+[126, 22:23:04] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (5,'Bellaire'): Running...
+[126, 22:23:04] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (5,'Bellaire'): 1 row(s) affected
+[127, 22:23:09] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (5,'Houston'): Running...
+[127, 22:23:09] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (5,'Houston'): Error Code: 1062. Duplicate entry '5' for key 'dept_locations.Dnumber'
+[128, 22:26:52] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[128, 22:26:52] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[128, 22:26:52] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[129, 22:27:55] Apply changes to dept_locations: Applying object changes ...
+[129, 22:28:02] Apply changes to dept_locations: 
+[130, 22:32:28] Apply changes to dept_locations: Applying object changes ...
+[130, 22:32:36] Apply changes to dept_locations: 
+[131, 22:32:41] Apply changes to dept_locations: Applying object changes ...
+[131, 22:32:45] Apply changes to dept_locations: 
+[132, 22:34:52] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT NULL DEFAULT 1 ,
+DROP INDEX `Dnumber`: Running...
+[132, 22:34:52] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT NULL DEFAULT 1 ,
+DROP INDEX `Dnumber`: Error Code: 1171. All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+[133, 22:35:15] Apply changes to dept_locations: Applying object changes ...
+[133, 22:35:17] Applying changes to dept_locations...: 
+[133, 22:36:27] Apply changes to dept_locations: Error 1171: All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+SQL Statement:
+ALTER TABLE `databasehw4`.`dept_locations` 
+CHANGE COLUMN `Dnumber` `Dnumber` INT NULL DEFAULT 1 ,
+DROP INDEX `Dnumber` 
+
+
+[134, 22:38:51] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[134, 22:38:51] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[134, 22:38:51] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[135, 22:40:27] Apply changes to dept_locations: Applying object changes ...
+[135, 22:40:40] Apply changes to dept_locations: 
+[136, 22:40:58] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT NOT NULL DEFAULT 1 ,
+DROP INDEX `Dnumber`: Running...
+[136, 22:40:58] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT NOT NULL DEFAULT 1 ,
+DROP INDEX `Dnumber`: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[137, 22:41:28] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[137, 22:41:28] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[137, 22:41:28] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[138, 22:42:47] ALTER TABLE databasehw4.dept_locations ADD
+	CONSTRAINT dept_locations_dept_fk FOREIGN KEY (Dnumber) REFERENCES EMPLOYEE(Dnumber)
+    ON DELETE SET NULL ON UPDATE CASCADE: Running...
+[138, 22:42:47] ALTER TABLE databasehw4.dept_locations ADD
+	CONSTRAINT dept_locations_dept_fk FOREIGN KEY (Dnumber) REFERENCES EMPLOYEE(Dnumber)
+    ON DELETE SET NULL ON UPDATE CASCADE: Error Code: 1830. Column 'Dnumber' cannot be NOT NULL: needed in a foreign key constraint 'dept_locations_dept_fk' SET NULL
+[139, 22:44:17] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (5,'Houston'): Running...
+[139, 22:44:17] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (5,'Houston'): 1 row(s) affected
+[140, 22:44:26] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES ( ,'Sugarland'): Running...
+[140, 22:44:26] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES ( ,'Sugarland'): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ','Sugarland')' at line 1
+[141, 22:44:37] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (NULL,'Sugarland'): Running...
+[141, 22:44:37] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (NULL,'Sugarland'): Error Code: 1048. Column 'Dnumber' cannot be null
+[142, 22:45:07] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[142, 22:45:07] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[142, 22:45:07] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[143, 22:53:30] Apply changes to dept_locations: Applying object changes ...
+[143, 22:53:33] Apply changes to dept_locations: 
+[144, 22:53:38] Apply changes to dept_locations: Applying object changes ...
+[144, 22:53:46] Apply changes to dept_locations: 
+[145, 22:53:49] Apply changes to dept_locations: Applying object changes ...
+[145, 22:53:56] Apply changes to dept_locations: 
+[146, 22:55:14] Apply changes to dept_locations: Applying object changes ...
+[146, 22:56:04] Apply changes to dept_locations: 
+[147, 22:56:08] EXPLAIN SELECT * FROM databasehw4.department: Executing 
+[147, 22:56:08] EXPLAIN SELECT * FROM databasehw4.department: OK
+[148, 22:56:08] EXPLAIN FORMAT=JSON SELECT * FROM databasehw4.department: Executing 
+[148, 22:56:08] EXPLAIN FORMAT=JSON SELECT * FROM databasehw4.department: OK
+[149, 23:01:16] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT NOT NULL DEFAULT 1, 
+DROP INDEX `Dnumber`: Running...
+[149, 23:01:16] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT NOT NULL DEFAULT 1, 
+DROP INDEX `Dnumber`: Error Code: 1091. Can't DROP 'Dnumber'; check that column/key exists
+[150, 23:01:30] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[150, 23:01:30] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[150, 23:01:30] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[151, 23:02:14] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT NOT NULL DEFAULT 1: Running...
+[151, 23:02:14] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT NOT NULL DEFAULT 1: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[152, 23:02:22] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[152, 23:02:22] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[152, 23:02:22] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[153, 23:02:44] ALTER TABLE `databasehw4`.`dept_locations` DROP INDEX `Dnumber`: Running...
+[153, 23:02:44] ALTER TABLE `databasehw4`.`dept_locations` DROP INDEX `Dnumber`: Error Code: 1091. Can't DROP 'Dnumber'; check that column/key exists
+[154, 23:06:34] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Running...
+[154, 23:06:34] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Fetching...
+[154, 23:06:34] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: 4 row(s) returned
+[155, 23:06:52] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (NULL,'Sugarland'): Running...
+[155, 23:06:52] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (NULL,'Sugarland'): Error Code: 1048. Column 'Dnumber' cannot be null
+[156, 23:09:12] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[156, 23:09:12] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[156, 23:09:12] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[157, 23:31:54] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT DEFAULT 1: Running...
+[157, 23:31:54] ALTER TABLE `databasehw4`.`dept_locations` CHANGE COLUMN `Dnumber` `Dnumber` INT DEFAULT 1: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[158, 23:32:08] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[158, 23:32:08] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[158, 23:32:08] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[159, 23:32:24] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (NULL,'Sugarland'): Running...
+[159, 23:32:24] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (NULL,'Sugarland'): Error Code: 1048. Column 'Dnumber' cannot be null
+[160, 23:34:47] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Running...
+[160, 23:34:47] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Fetching...
+[160, 23:34:47] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: 4 row(s) returned
+[161, 23:34:58] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (1,'Sugarland'): Running...
+[161, 23:34:58] INSERT INTO databasehw4.DEPT_LOCATIONS(DNUMBER,DLOCATION) VALUES (1,'Sugarland'): 1 row(s) affected
+[162, 23:35:07] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Running...
+[162, 23:35:07] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Fetching...
+[162, 23:35:07] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: 5 row(s) returned
+[163, 23:47:03] INSERT INTO PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('ProductX',1,'Bellaire',5): Running...
+[163, 23:47:03] INSERT INTO PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('ProductX',1,'Bellaire',5): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[164, 23:48:55] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('ProductX',1,'Bellaire',5): Running...
+[164, 23:48:55] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('ProductX',1,'Bellaire',5): 1 row(s) affected
+[165, 23:53:23] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('ProductY',2,'Sugarland',5): Running...
+[165, 23:53:23] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('ProductY',2,'Sugarland',5): 1 row(s) affected
+[166, 23:54:49] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('ProductZ',3,'Houston',5): Running...
+[166, 23:54:49] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('ProductZ',3,'Houston',5): 1 row(s) affected
+[167, 23:54:57] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('Computerization',10,'Stafford',4): Running...
+[167, 23:54:57] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('Computerization',10,'Stafford',4): 1 row(s) affected
+[168, 23:54:57] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('Reorganization',20,'Houston',1): Running...
+[168, 23:54:57] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('Reorganization',20,'Houston',1): 1 row(s) affected
+[169, 23:54:57] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('Newbenefits',30,'Stafford',4): Running...
+[169, 23:54:57] INSERT INTO databasehw4.PROJECT(PNAME,PNUMBER,PLOCATION,DNUM) VALUES
+('Newbenefits',30,'Stafford',4): 1 row(s) affected
+[170, 23:56:29] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES
+(123456789,1,32.5): Running...
+[170, 23:56:29] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES
+(123456789,1,32.5): 1 row(s) affected
+[171, 00:00:11] CREATE SCHEMA `databasehw4a`: Running...
+[171, 00:00:11] CREATE SCHEMA `databasehw4a`: Error Code: 1007. Can't create database 'databasehw4a'; database exists
+[172, 00:00:19] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(123456789,2,7.5): Running...
+[172, 00:00:19] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(123456789,2,7.5): 1 row(s) affected
+[173, 00:00:26] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(666884444,3,40): Running...
+[173, 00:00:26] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(666884444,3,40): 1 row(s) affected
+[174, 00:00:26] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(453453453,1,20): Running...
+[174, 00:00:26] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(453453453,1,20): 1 row(s) affected
+[175, 00:00:26] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(453453453,2,20): Running...
+[175, 00:00:26] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(453453453,2,20): 1 row(s) affected
+[176, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(333445555,2,10): Running...
+[176, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(333445555,2,10): 1 row(s) affected
+[177, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(333445555,3,10): Running...
+[177, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(333445555,3,10): 1 row(s) affected
+[178, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(333445555,10,10): Running...
+[178, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(333445555,10,10): 1 row(s) affected
+[179, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(333445555,20,10): Running...
+[179, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(333445555,20,10): 1 row(s) affected
+[180, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(999887777,30,30): Running...
+[180, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(999887777,30,30): 1 row(s) affected
+[181, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(999887777,10,10): Running...
+[181, 00:00:34] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(999887777,10,10): 1 row(s) affected
+[182, 00:00:42] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(987987987,10,35): Running...
+[182, 00:00:42] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(987987987,10,35): 1 row(s) affected
+[183, 00:00:42] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(987987987,30,5): Running...
+[183, 00:00:42] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(987987987,30,5): 1 row(s) affected
+[184, 00:00:42] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(987654321,30,20): Running...
+[184, 00:00:42] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(987654321,30,20): 1 row(s) affected
+[185, 00:00:42] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(987654321,20,15): Running...
+[185, 00:00:42] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(987654321,20,15): 1 row(s) affected
+[186, 00:00:46] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(888665555,20,NULL): Running...
+[186, 00:00:46] INSERT INTO databasehw4.WORKS_ON(ESSN,PNO,HOURS) VALUES(888665555,20,NULL): 1 row(s) affected
+[187, 00:12:28] INSERT INTO DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(123456789,'Alice','F',STR_TO_DATE('30-DEC-1988', "%d-%b-%Y"),'Daughter'): Running...
+[187, 00:12:28] INSERT INTO DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(123456789,'Alice','F',STR_TO_DATE('30-DEC-1988', "%d-%b-%Y"),'Daughter'): Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[188, 00:13:14] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(123456789,'Alice','F',STR_TO_DATE('30-DEC-1988', "%d-%b-%Y"),'Daughter'): Running...
+[188, 00:13:14] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(123456789,'Alice','F',STR_TO_DATE('30-DEC-1988', "%d-%b-%Y"),'Daughter'): 1 row(s) affected
+[189, 00:13:32] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(123456789,'Elizabeth','F',STR_TO_DATE('05-MAY-1967', "%d-%b-%Y"),'Spouse'): Running...
+[189, 00:13:32] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(123456789,'Elizabeth','F',STR_TO_DATE('05-MAY-1967', "%d-%b-%Y"),'Spouse'): 1 row(s) affected
+[190, 00:13:36] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(123456789,'Micheal','M',STR_TO_DATE('04-JAN-1988', "%d-%b-%Y"),'Son'): Running...
+[190, 00:13:36] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(123456789,'Micheal','M',STR_TO_DATE('04-JAN-1988', "%d-%b-%Y"),'Son'): 1 row(s) affected
+[191, 00:13:40] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(333445555,'Alice','F',STR_TO_DATE('05-APR-1986', "%d-%b-%Y"),'Daughter'): Running...
+[191, 00:13:40] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(333445555,'Alice','F',STR_TO_DATE('05-APR-1986', "%d-%b-%Y"),'Daughter'): 1 row(s) affected
+[192, 00:13:44] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(333445555,'Joy','F',STR_TO_DATE('03-MAY-1958', "%d-%b-%Y"),'Spouse'): Running...
+[192, 00:13:44] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(333445555,'Joy','F',STR_TO_DATE('03-MAY-1958', "%d-%b-%Y"),'Spouse'): 1 row(s) affected
+[193, 00:13:48] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(333445555,'Theodore','M',STR_TO_DATE('25-OCT-1983', "%d-%b-%Y"),'Son'): Running...
+[193, 00:13:48] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(333445555,'Theodore','M',STR_TO_DATE('25-OCT-1983', "%d-%b-%Y"),'Son'): 1 row(s) affected
+[194, 00:13:53] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(987654321,'Abner','M',STR_TO_DATE('28-FEB-1942', "%d-%b-%Y"),'Spouse'): Running...
+[194, 00:13:53] INSERT INTO databasehw4.DEPENDENT(ESSN,DEPENDENT_NAME,SEX,BDATE,RELATIONSHIP) VALUES
+(987654321,'Abner','M',STR_TO_DATE('28-FEB-1942', "%d-%b-%Y"),'Spouse'): 1 row(s) affected
+[195, 00:31:42] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[195, 00:31:42] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[195, 00:31:42] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[196, 00:42:46] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[196, 00:42:46] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[196, 00:42:46] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[197, 00:43:33] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[197, 00:43:33] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[197, 00:43:33] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[198, 00:44:09] SHOW CREATE TABLE databasehw4.PROJECT: Running...
+[198, 00:44:09] SHOW CREATE TABLE databasehw4.PROJECT: Fetching...
+[198, 00:44:09] SHOW CREATE TABLE databasehw4.PROJECT: 1 row(s) returned
+[199, 00:44:49] SHOW CREATE TABLE databasehw4.WORKS_ON: Running...
+[199, 00:44:49] SHOW CREATE TABLE databasehw4.WORKS_ON: Fetching...
+[199, 00:44:49] SHOW CREATE TABLE databasehw4.WORKS_ON: 1 row(s) returned
+[200, 00:46:53] SHOW CREATE TABLE databasehw4.DEPENDENT: Running...
+[200, 00:46:53] SHOW CREATE TABLE databasehw4.DEPENDENT: Fetching...
+[200, 00:46:53] SHOW CREATE TABLE databasehw4.DEPENDENT: 1 row(s) returned
+[201, 01:20:47] SELECT * FROM databasehw4.department
+LIMIT 0, 1000
+: Running...
+[201, 01:20:47] SELECT * FROM databasehw4.department
+LIMIT 0, 1000
+: Fetching...
+[201, 01:20:48] SELECT * FROM databasehw4.department
+LIMIT 0, 1000
+: 3 row(s) returned
+[202, 17:35:42] SELECT * FROM databasehw4.dependent
+LIMIT 0, 1000
+: Running...
+[202, 17:35:42] SELECT * FROM databasehw4.dependent
+LIMIT 0, 1000
+: Fetching...
+[202, 17:35:42] SELECT * FROM databasehw4.dependent
+LIMIT 0, 1000
+: 7 row(s) returned
+[203, 18:08:33] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Running...
+[203, 18:08:33] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Fetching...
+[203, 18:08:33] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: 5 row(s) returned
+[204, 18:09:06] SELECT * FROM databasehw4.project
+LIMIT 0, 1000
+: Running...
+[204, 18:09:06] SELECT * FROM databasehw4.project
+LIMIT 0, 1000
+: Fetching...
+[204, 18:09:06] SELECT * FROM databasehw4.project
+LIMIT 0, 1000
+: 6 row(s) returned
+[205, 18:09:32] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: Running...
+[205, 18:09:32] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: Fetching...
+[205, 18:09:32] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: 16 row(s) returned
+[206, 18:10:20] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[206, 18:10:20] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[206, 18:10:20] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[207, 18:31:31] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: Running...
+[207, 18:31:31] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: Fetching...
+[207, 18:31:31] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: 16 row(s) returned
+[208, 18:31:32] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: Running...
+[208, 18:31:32] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: Fetching...
+[208, 18:31:32] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: 16 row(s) returned
+[209, 18:47:52] UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: Running...
+[209, 18:47:52] UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column. Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
+[210, 18:48:02] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[210, 18:48:02] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[210, 18:48:02] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[211, 18:48:56] EXPLAIN UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: Executing 
+[211, 18:48:56] EXPLAIN UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: OK
+[212, 18:48:56] EXPLAIN FORMAT=JSON UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: Executing 
+[212, 18:48:56] EXPLAIN FORMAT=JSON UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: OK
+[213, 18:49:04] EXPLAIN UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: Executing 
+[213, 18:49:04] EXPLAIN UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: OK
+[214, 18:49:04] EXPLAIN FORMAT=JSON UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: Executing 
+[214, 18:49:04] EXPLAIN FORMAT=JSON UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: OK
+[215, 18:50:59] UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: Running...
+[215, 18:50:59] UPDATE databasehw4.EMPLOYEE SET Super_ssn = 333445555 and DNO = 5 where Ssn = 123456789: Error Code: 1175. You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column. Cannot use range access on index 'PRIMARY' due to type or collation conversion on field 'Ssn'
+To disable safe mode, toggle the option in Preferences -> SQL Editor and reconnect.
+[216, 18:51:27] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[216, 18:51:27] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[216, 18:51:27] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[217, 18:55:28] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' and DNO = 5 where Ssn = '123456789': Running...
+[217, 18:55:28] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' and DNO = 5 where Ssn = '123456789': 0 row(s) affected
+Rows matched: 1  Changed: 0  Warnings: 0
+[218, 18:59:50] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '888665555' and DNO = 5 where Ssn = '333445555': Running...
+[218, 18:59:50] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '888665555' and DNO = 5 where Ssn = '333445555': 0 row(s) affected
+Rows matched: 1  Changed: 0  Warnings: 0
+[219, 19:14:13] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '888665555' and DNO = 5 where Ssn = '333445555': Running...
+[219, 19:14:13] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '888665555' and DNO = 5 where Ssn = '333445555': 0 row(s) affected
+Rows matched: 1  Changed: 0  Warnings: 0
+[220, 19:14:21] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '987654321' and DNO = 4 where Ssn = '999887777': Running...
+[220, 19:14:21] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '987654321' and DNO = 4 where Ssn = '999887777': 0 row(s) affected
+Rows matched: 1  Changed: 0  Warnings: 0
+[221, 19:14:25] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[221, 19:14:25] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[221, 19:14:25] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[222, 19:31:38] Apply changes to employee: Applying object changes ...
+[222, 19:32:01] Apply changes to employee: 
+[223, 19:32:50] Apply changes to employee: Applying object changes ...
+[223, 19:33:01] Applying changes to employee...: 
+[223, 19:33:01] : Changes applied to employee
+[223, 19:33:14] Apply changes to employee: Changes applied
+[224, 19:45:15] describe table databasehw4.employee: Running...
+[224, 19:45:15] describe table databasehw4.employee: Fetching...
+[224, 19:45:15] describe table databasehw4.employee: 1 row(s) returned
+[225, 20:02:12] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Minit  DROP DEFAULT: Running...
+[225, 20:02:12] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Minit  DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[226, 20:03:09] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[226, 20:03:09] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[226, 20:03:09] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[227, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Bdate  DROP DEFAULT: Running...
+[227, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Bdate  DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[228, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Address  DROP DEFAULT: Running...
+[228, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Address  DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[229, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Sex  DROP DEFAULT: Running...
+[229, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Sex  DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[230, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Salary  DROP DEFAULT: Running...
+[230, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Salary  DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[231, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Super_ssn  DROP DEFAULT: Running...
+[231, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Super_ssn  DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[232, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Dno  DROP DEFAULT: Running...
+[232, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Dno  DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[233, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Bdate  DROP DEFAULT: Running...
+[233, 20:05:54] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Bdate  DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[234, 20:06:21] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[234, 20:06:21] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[234, 20:06:21] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[235, 20:21:36] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' and DNO = 5 where Ssn = '123456789': Running...
+[235, 20:21:36] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' and DNO = 5 where Ssn = '123456789': 0 row(s) affected
+Rows matched: 1  Changed: 0  Warnings: 0
+[236, 20:21:36] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '888665555' and DNO = 5 where Ssn = '333445555': Running...
+[236, 20:21:36] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '888665555' and DNO = 5 where Ssn = '333445555': 0 row(s) affected
+Rows matched: 1  Changed: 0  Warnings: 0
+[237, 20:21:41] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[237, 20:21:41] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[237, 20:21:41] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[238, 20:21:48] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[238, 20:21:48] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[238, 20:21:48] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[239, 20:22:22] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Minit  DROP DEFAULT: Running...
+[239, 20:22:22] ALTER TABLE databasehw4.EMPLOYEE ALTER COLUMN Minit  DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[240, 20:22:24] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[240, 20:22:24] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[240, 20:22:24] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[241, 20:23:24] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' and DNO = 5 where Ssn = '123456789': Running...
+[241, 20:23:24] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' and DNO = 5 where Ssn = '123456789': 0 row(s) affected
+Rows matched: 1  Changed: 0  Warnings: 0
+[242, 20:28:40] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[242, 20:28:40] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[242, 20:28:40] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[243, 20:29:18] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' , DNO = 5 where Ssn = '123456789': Running...
+[243, 20:29:18] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' , DNO = 5 where Ssn = '123456789': 1 row(s) affected
+Rows matched: 1  Changed: 1  Warnings: 0
+[244, 20:29:26] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[244, 20:29:26] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[244, 20:29:26] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[245, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '888665555' , DNO = 5 where Ssn = '333445555': Running...
+[245, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '888665555' , DNO = 5 where Ssn = '333445555': 1 row(s) affected
+Rows matched: 1  Changed: 1  Warnings: 0
+[246, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '987654321' , DNO = 4 where Ssn = '999887777': Running...
+[246, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '987654321' , DNO = 4 where Ssn = '999887777': 1 row(s) affected
+Rows matched: 1  Changed: 1  Warnings: 0
+[247, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '888665555' , DNO = 4 where Ssn = '987654321': Running...
+[247, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '888665555' , DNO = 4 where Ssn = '987654321': 1 row(s) affected
+Rows matched: 1  Changed: 1  Warnings: 0
+[248, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' , DNO = 5 where Ssn = '666884444': Running...
+[248, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' , DNO = 5 where Ssn = '666884444': 1 row(s) affected
+Rows matched: 1  Changed: 1  Warnings: 0
+[249, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' , DNO = 5 where Ssn = '453453453': Running...
+[249, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '333445555' , DNO = 5 where Ssn = '453453453': 1 row(s) affected
+Rows matched: 1  Changed: 1  Warnings: 0
+[250, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '987654321' , DNO = 4 where Ssn = '987987987': Running...
+[250, 20:34:30] UPDATE databasehw4.EMPLOYEE SET Super_ssn = '987654321' , DNO = 4 where Ssn = '987987987': 1 row(s) affected
+Rows matched: 1  Changed: 1  Warnings: 0
+[251, 20:34:30] UPDATE databasehw4.EMPLOYEE SET DNO = 1 WHERE Ssn = '888665555': Running...
+[251, 20:34:30] UPDATE databasehw4.EMPLOYEE SET DNO = 1 WHERE Ssn = '888665555': 1 row(s) affected
+Rows matched: 1  Changed: 1  Warnings: 0
+[252, 20:35:02] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[252, 20:35:02] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[252, 20:35:02] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[253, 21:00:01] describe table databasehw4.EMPLOYEE: Running...
+[253, 21:00:01] describe table databasehw4.EMPLOYEE: Fetching...
+[253, 21:00:01] describe table databasehw4.EMPLOYEE: 1 row(s) returned
+[254, 21:00:50] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[254, 21:00:50] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[254, 21:00:50] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[255, 21:11:55] Apply changes to employee: Applying object changes ...
+[255, 21:11:55] Apply changes to employee: No changes detected
+[256, 21:12:06] Apply changes to employee: Applying object changes ...
+[256, 21:12:06] Apply changes to employee: No changes detected
+[257, 21:12:07] Apply changes to employee: Applying object changes ...
+[257, 21:12:07] Apply changes to employee: No changes detected
+[258, 21:13:26] Apply changes to employee: Applying object changes ...
+[258, 21:13:26] Apply changes to employee: No changes detected
+[259, 21:14:04] Apply changes to employee: Applying object changes ...
+[259, 21:14:55] Apply changes to employee: 
+[260, 21:17:13] Apply changes to employee: Applying object changes ...
+[260, 21:18:29] Apply changes to employee: 
+[261, 21:18:38] ALTER TABLE `databasehw4`.`employee` 
+DROP FOREIGN KEY `EMP_DEPT_FK`: Running...
+[261, 21:18:38] ALTER TABLE `databasehw4`.`employee` 
+DROP FOREIGN KEY `EMP_DEPT_FK`: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[262, 21:18:43] ALTER TABLE `databasehw4`.`employee` 
+CHANGE COLUMN `Dno` `Dno` INT NOT NULL: Running...
+[262, 21:18:43] ALTER TABLE `databasehw4`.`employee` 
+CHANGE COLUMN `Dno` `Dno` INT NOT NULL: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[263, 21:18:48] ALTER TABLE `databasehw4`.`employee` 
+ADD CONSTRAINT `EMP_DEPT_FK`
+  FOREIGN KEY (`Dno`)
+  REFERENCES `databasehw4`.`department` (`Dnumber`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE: Running...
+[263, 21:18:48] ALTER TABLE `databasehw4`.`employee` 
+ADD CONSTRAINT `EMP_DEPT_FK`
+  FOREIGN KEY (`Dno`)
+  REFERENCES `databasehw4`.`department` (`Dnumber`)
+  ON DELETE SET NULL
+  ON UPDATE CASCADE: Error Code: 1830. Column 'Dno' cannot be NOT NULL: needed in a foreign key constraint 'EMP_DEPT_FK' SET NULL
+[264, 21:20:37] ALTER TABLE `databasehw4`.`employee` 
+ADD CONSTRAINT `EMP_DEPT_FK`
+  FOREIGN KEY (`Dno`)
+  REFERENCES `databasehw4`.`department` (`Dnumber`)
+  ON DELETE SET DEFAULT
+  ON UPDATE CASCADE: Running...
+[264, 21:20:37] ALTER TABLE `databasehw4`.`employee` 
+ADD CONSTRAINT `EMP_DEPT_FK`
+  FOREIGN KEY (`Dno`)
+  REFERENCES `databasehw4`.`department` (`Dnumber`)
+  ON DELETE SET DEFAULT
+  ON UPDATE CASCADE: 8 row(s) affected
+Records: 8  Duplicates: 0  Warnings: 0
+[265, 21:22:37] SHOW CREATE TABLE databasehw4.EMPLOYEE: Running...
+[265, 21:22:37] SHOW CREATE TABLE databasehw4.EMPLOYEE: Fetching...
+[265, 21:22:37] SHOW CREATE TABLE databasehw4.EMPLOYEE: 1 row(s) returned
+[266, 21:35:47] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[266, 21:35:47] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[266, 21:35:47] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[267, 22:09:01] Apply changes to department: Applying object changes ...
+[267, 22:09:18] Apply changes to department: 
+[268, 22:11:28] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Running...
+[268, 22:11:28] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: Fetching...
+[268, 22:11:28] SELECT * FROM databasehw4.employee
+LIMIT 0, 1000
+: 8 row(s) returned
+[269, 22:12:17] ALTER TABLE `databasehw4`.`department` 
+CHANGE COLUMN `Dname` `Dname` VARCHAR(15) NOT NULL ,
+CHANGE COLUMN `Mgr_ssn` `Mgr_ssn` INT NOT NULL DEFAULT '88866555' ,
+CHANGE COLUMN `Mgr_start_date` `Mgr_start_date` DATE NULL: Running...
+[269, 22:12:17] ALTER TABLE `databasehw4`.`department` 
+CHANGE COLUMN `Dname` `Dname` VARCHAR(15) NOT NULL ,
+CHANGE COLUMN `Mgr_ssn` `Mgr_ssn` INT NOT NULL DEFAULT '88866555' ,
+CHANGE COLUMN `Mgr_start_date` `Mgr_start_date` DATE NULL: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[270, 22:12:29] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[270, 22:12:29] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[270, 22:12:29] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[271, 22:13:16] ALTER TABLE databasehw4.DEPARTMENT ALTER COLUMN Mgr_start_date DROP DEFAULT: Running...
+[271, 22:13:16] ALTER TABLE databasehw4.DEPARTMENT ALTER COLUMN Mgr_start_date DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[272, 22:13:21] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[272, 22:13:21] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[272, 22:13:21] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[273, 22:19:10] ALTER TABLE `databasehw4`.`department` 
+CHANGE COLUMN `Mgr_ssn` `Mgr_ssn` CHAR(9) DEFAULT '88866555': Running...
+[273, 22:19:10] ALTER TABLE `databasehw4`.`department` 
+CHANGE COLUMN `Mgr_ssn` `Mgr_ssn` CHAR(9) DEFAULT '88866555': 3 row(s) affected
+Records: 3  Duplicates: 0  Warnings: 0
+[274, 22:19:14] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[274, 22:19:14] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[274, 22:19:14] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[275, 22:21:26] Apply changes to department: Applying object changes ...
+[275, 22:21:30] Apply changes to department: 
+[276, 22:21:48] ALTER TABLE `databasehw4`.`department` 
+ADD CONSTRAINT `Mgr_ssn`
+  FOREIGN KEY (`Mgr_ssn`)
+  REFERENCES `databasehw4`.`employee` (`Ssn`)
+  ON DELETE SET DEFAULT
+  ON UPDATE CASCADE: Running...
+[276, 22:21:48] ALTER TABLE `databasehw4`.`department` 
+ADD CONSTRAINT `Mgr_ssn`
+  FOREIGN KEY (`Mgr_ssn`)
+  REFERENCES `databasehw4`.`employee` (`Ssn`)
+  ON DELETE SET DEFAULT
+  ON UPDATE CASCADE: 3 row(s) affected
+Records: 3  Duplicates: 0  Warnings: 0
+[277, 22:21:55] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[277, 22:21:55] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[277, 22:21:55] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[278, 22:23:40] ALTER TABLE databasehw4.DEPARTMENT ALTER COLUMN Mgr_ssn DROP KEY: Running...
+[278, 22:23:40] ALTER TABLE databasehw4.DEPARTMENT ALTER COLUMN Mgr_ssn DROP KEY: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'KEY' at line 1
+[279, 22:29:45] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[279, 22:29:45] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[279, 22:29:45] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[280, 22:33:34] Apply changes to dept_locations: Applying object changes ...
+[280, 22:33:58] Apply changes to dept_locations: 
+[281, 22:34:51] Apply changes to department: Applying object changes ...
+[281, 22:35:09] Apply changes to department: 
+[282, 22:35:55] ALTER TABLE `databasehw4`.`department` DROP CONSTRAINT Mgr_ssn: Running...
+[282, 22:35:55] ALTER TABLE `databasehw4`.`department` DROP CONSTRAINT Mgr_ssn: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[283, 22:36:03] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[283, 22:36:03] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[283, 22:36:03] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[284, 22:36:15] ALTER TABLE `databasehw4`.`department` 
+ADD CONSTRAINT `Dept_mgr_fk`
+  FOREIGN KEY (`Mgr_ssn`)
+  REFERENCES `databasehw4`.`employee` (`Ssn`)
+  ON DELETE NO ACTION
+  ON UPDATE CASCADE: Running...
+[284, 22:36:15] ALTER TABLE `databasehw4`.`department` 
+ADD CONSTRAINT `Dept_mgr_fk`
+  FOREIGN KEY (`Mgr_ssn`)
+  REFERENCES `databasehw4`.`employee` (`Ssn`)
+  ON DELETE NO ACTION
+  ON UPDATE CASCADE: 3 row(s) affected
+Records: 3  Duplicates: 0  Warnings: 0
+[285, 22:36:30] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[285, 22:36:30] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[285, 22:36:30] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[286, 22:38:36] ALTER TABLE `databasehw4`.`department` 
+ADD CONSTRAINT `Dept_mgr_fk`
+  FOREIGN KEY (`Mgr_ssn`)
+  REFERENCES `databasehw4`.`employee` (`Ssn`)
+  ON DELETE SET DEFAULT
+  ON UPDATE CASCADE: Running...
+[286, 22:38:36] ALTER TABLE `databasehw4`.`department` 
+ADD CONSTRAINT `Dept_mgr_fk`
+  FOREIGN KEY (`Mgr_ssn`)
+  REFERENCES `databasehw4`.`employee` (`Ssn`)
+  ON DELETE SET DEFAULT
+  ON UPDATE CASCADE: Error Code: 1826. Duplicate foreign key constraint name 'Dept_mgr_fk'
+[287, 22:41:39] ALTER TABLE `databasehw4`.`department` DROP CONSTRAINT Dept_mgr_fk: Running...
+[287, 22:41:39] ALTER TABLE `databasehw4`.`department` DROP CONSTRAINT Dept_mgr_fk: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[288, 22:41:42] ALTER TABLE `databasehw4`.`department` 
+ADD CONSTRAINT `Dept_mgr_fk`
+  FOREIGN KEY (`Mgr_ssn`)
+  REFERENCES `databasehw4`.`employee` (`Ssn`)
+  ON DELETE SET DEFAULT
+  ON UPDATE CASCADE: Running...
+[288, 22:41:42] ALTER TABLE `databasehw4`.`department` 
+ADD CONSTRAINT `Dept_mgr_fk`
+  FOREIGN KEY (`Mgr_ssn`)
+  REFERENCES `databasehw4`.`employee` (`Ssn`)
+  ON DELETE SET DEFAULT
+  ON UPDATE CASCADE: 3 row(s) affected
+Records: 3  Duplicates: 0  Warnings: 0
+[289, 22:41:53] SHOW CREATE TABLE databasehw4.DEPARTMENT: Running...
+[289, 22:41:53] SHOW CREATE TABLE databasehw4.DEPARTMENT: Fetching...
+[289, 22:41:53] SHOW CREATE TABLE databasehw4.DEPARTMENT: 1 row(s) returned
+[290, 22:45:08] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Running...
+[290, 22:45:08] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Fetching...
+[290, 22:45:08] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: 5 row(s) returned
+[291, 22:46:32] Apply changes to dept_locations: Applying object changes ...
+[291, 22:46:48] Apply changes to dept_locations: 
+[292, 22:48:42] ALTER TABLE `databasehw4`.`dept_locations` 
+CHANGE COLUMN `Dnumber` `Dnumber` INT NULL DEFAULT '1': Running...
+[292, 22:48:42] ALTER TABLE `databasehw4`.`dept_locations` 
+CHANGE COLUMN `Dnumber` `Dnumber` INT NULL DEFAULT '1': Error Code: 1171. All parts of a PRIMARY KEY must be NOT NULL; if you need NULL in a key, use UNIQUE instead
+[293, 22:51:11] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Running...
+[293, 22:51:11] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: Fetching...
+[293, 22:51:11] SELECT * FROM databasehw4.dept_locations
+LIMIT 0, 1000
+: 5 row(s) returned
+[294, 22:53:13] ALTER TABLE `databasehw4`.`dept_locations` 
+CHANGE COLUMN `Dnumber` `Dnumber` INT DEFAULT '1': Running...
+[294, 22:53:13] ALTER TABLE `databasehw4`.`dept_locations` 
+CHANGE COLUMN `Dnumber` `Dnumber` INT DEFAULT '1': 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[295, 22:53:13] ALTER TABLE `databasehw4`.`dept_locations` 
+ADD CONSTRAINT `Dept_locations_dept_fk`
+  FOREIGN KEY (`Dnumber`)
+  REFERENCES `databasehw4`.`department` (`Dnumber`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE: Running...
+[295, 22:53:13] ALTER TABLE `databasehw4`.`dept_locations` 
+ADD CONSTRAINT `Dept_locations_dept_fk`
+  FOREIGN KEY (`Dnumber`)
+  REFERENCES `databasehw4`.`department` (`Dnumber`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE: 5 row(s) affected
+Records: 5  Duplicates: 0  Warnings: 0
+[296, 22:53:25] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Running...
+[296, 22:53:25] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: Fetching...
+[296, 22:53:25] SHOW CREATE TABLE databasehw4.DEPT_LOCATIONS: 1 row(s) returned
+[297, 22:54:47] SHOW CREATE TABLE databasehw4.DEPENDENT: Running...
+[297, 22:54:47] SHOW CREATE TABLE databasehw4.DEPENDENT: Fetching...
+[297, 22:54:47] SHOW CREATE TABLE databasehw4.DEPENDENT: 1 row(s) returned
+[298, 22:55:28] SHOW CREATE TABLE databasehw4.PROJECT: Running...
+[298, 22:55:28] SHOW CREATE TABLE databasehw4.PROJECT: Fetching...
+[298, 22:55:28] SHOW CREATE TABLE databasehw4.PROJECT: 1 row(s) returned
+[299, 22:58:03] ALTER TABLE databasehw4.PROJECT ALTER COLUMN Plocation DROP DEFAULT: Running...
+[299, 22:58:03] ALTER TABLE databasehw4.PROJECT ALTER COLUMN Plocation DROP DEFAULT: 0 row(s) affected
+Records: 0  Duplicates: 0  Warnings: 0
+[300, 22:58:12] SHOW CREATE TABLE databasehw4.PROJECT: Running...
+[300, 22:58:12] SHOW CREATE TABLE databasehw4.PROJECT: Fetching...
+[300, 22:58:12] SHOW CREATE TABLE databasehw4.PROJECT: 1 row(s) returned
+[301, 22:58:50] SHOW CREATE TABLE databasehw4.WORKS_ON: Running...
+[301, 22:58:50] SHOW CREATE TABLE databasehw4.WORKS_ON: Fetching...
+[301, 22:58:50] SHOW CREATE TABLE databasehw4.WORKS_ON: 1 row(s) returned
+[302, 23:01:52] SHOW CREATE TABLE databasehw4.DEPENDENT: Running...
+[302, 23:01:52] SHOW CREATE TABLE databasehw4.DEPENDENT: Fetching...
+[302, 23:01:52] SHOW CREATE TABLE databasehw4.DEPENDENT: 1 row(s) returned
+[303, 00:36:31] SELECT * FROM databasehw4.EMPLOYEE AS e
+WHERE NOT EXISTS (
+ (SELECT Pno FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith')
+ EXCEPT
+ (SELECT Pno FROM works_on WHERE essn = e.ssn) ): Running...
+[303, 00:36:31] SELECT * FROM databasehw4.EMPLOYEE AS e
+WHERE NOT EXISTS (
+ (SELECT Pno FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith')
+ EXCEPT
+ (SELECT Pno FROM works_on WHERE essn = e.ssn) ): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EXCEPT
+ (SELECT Pno FROM works_on WHERE essn = e.ssn) )' at line 4
+[304, 00:37:36] SELECT Pno FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'
+LIMIT 0, 1000
+: Running...
+[304, 00:37:36] SELECT Pno FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'Pno' in 'field list'
+[305, 00:38:37] SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'
+LIMIT 0, 1000
+: Running...
+[305, 00:38:37] SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'
+LIMIT 0, 1000
+: Fetching...
+[305, 00:38:37] SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'
+LIMIT 0, 1000
+: 1 row(s) returned
+[306, 00:40:33] SELECT * FROM databasehw4.EMPLOYEE AS e
+WHERE NOT EXISTS (
+ (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith')
+ EXCEPT -- returns row not available in 2nd select stmt
+ (SELECT Ssn FROM databasehw4.works_on WHERE essn = e.ssn) ): Running...
+[306, 00:40:33] SELECT * FROM databasehw4.EMPLOYEE AS e
+WHERE NOT EXISTS (
+ (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith')
+ EXCEPT -- returns row not available in 2nd select stmt
+ (SELECT Ssn FROM databasehw4.works_on WHERE essn = e.ssn) ): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EXCEPT -- returns row not available in 2nd select stmt
+ (SELECT Ssn FROM databas' at line 4
+[307, 01:11:34] SELECT * FROM databasehw4.EMPLOYEE AS e
+WHERE NOT EXISTS (
+ (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith')
+ EXCEPT -- returns row not available in 2nd select stmt
+ (SELECT Pno FROM databasehw4.works_on WHERE essn = e.ssn) ): Running...
+[307, 01:11:34] SELECT * FROM databasehw4.EMPLOYEE AS e
+WHERE NOT EXISTS (
+ (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith')
+ EXCEPT -- returns row not available in 2nd select stmt
+ (SELECT Pno FROM databasehw4.works_on WHERE essn = e.ssn) ): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EXCEPT -- returns row not available in 2nd select stmt
+ (SELECT Pno FROM databas' at line 4
+[308, 01:14:12] SELECT * FROM databasehw4.EMPLOYEE AS e
+WHERE NOT EXISTS (
+ (SELECT Pno FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith')
+ EXCEPT -- returns row not available in 2nd select stmt
+ (SELECT Ssn FROM databasehw4.works_on WHERE essn = e.ssn) ): Running...
+[308, 01:14:12] SELECT * FROM databasehw4.EMPLOYEE AS e
+WHERE NOT EXISTS (
+ (SELECT Pno FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith')
+ EXCEPT -- returns row not available in 2nd select stmt
+ (SELECT Ssn FROM databasehw4.works_on WHERE essn = e.ssn) ): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EXCEPT -- returns row not available in 2nd select stmt
+ (SELECT Ssn FROM databas' at line 4
+[309, 01:15:33] (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith' ): Running...
+[309, 01:15:33] (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith' ): Fetching...
+[309, 01:15:34] (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith' ): 1 row(s) returned
+[310, 01:22:38] SELECT * FROM databasehw4.WORK_ON as a
+WHERE NOT EXISTS ((SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith' as e)
+EXCEPT
+ (SELECT wo.ESSN FROM databasehw4.WORK_ON wo WHERE wo.ESSN = a.ssn ) ): Running...
+[310, 01:22:38] SELECT * FROM databasehw4.WORK_ON as a
+WHERE NOT EXISTS ((SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith' as e)
+EXCEPT
+ (SELECT wo.ESSN FROM databasehw4.WORK_ON wo WHERE wo.ESSN = a.ssn ) ): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as e)
+EXCEPT
+ (SELECT wo.ESSN FROM databasehw4.WORK_ON wo WHERE wo.ESSN = a.ssn ' at line 2
+[311, 01:23:00] (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith' as e): Running...
+[311, 01:23:00] (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith' as e): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as e)' at line 1
+[312, 01:23:09] SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'
+LIMIT 0, 1000
+: Running...
+[312, 01:23:09] SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'
+LIMIT 0, 1000
+: Fetching...
+[312, 01:23:09] SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'
+LIMIT 0, 1000
+: 1 row(s) returned
+[313, 01:23:18] SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith' as e: Running...
+[313, 01:23:18] SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith' as e: Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as e' at line 1
+[314, 01:27:56] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: Running...
+[314, 01:27:56] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: Fetching...
+[314, 01:27:56] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: 16 row(s) returned
+[315, 01:31:25] (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'): Running...
+[315, 01:31:25] (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'): Fetching...
+[315, 01:31:25] (SELECT Ssn FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'Smith'): 1 row(s) returned
+[316, 01:35:53] select ssn from databasehw4.EMPLOYEE
+LIMIT 0, 1000
+: Running...
+[316, 01:35:53] select ssn from databasehw4.EMPLOYEE
+LIMIT 0, 1000
+: Fetching...
+[316, 01:35:53] select ssn from databasehw4.EMPLOYEE
+LIMIT 0, 1000
+: 8 row(s) returned
+[317, 01:38:39] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: Running...
+[317, 01:38:39] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: Fetching...
+[317, 01:38:39] SELECT * FROM databasehw4.works_on
+LIMIT 0, 1000
+: 16 row(s) returned
+[318, 01:38:45] SELECT * FROM databasehw4.works_on WHERE Pno not in ( SELECT Pno FROM ( (SELECT Pno, essn FROM (select ssn from databasehw4.EMPLOYEE WHERE 
+Fname = 'John' and Lname = 'Smith') as p 
+cross join 
+(select distinct Pno from databasehw4.WORKS_ON) as sp)
+EXCEPT
+(SELECT Pno, Essn FROM databasehw4.WORKS_ON)) AS r ): Running...
+[318, 01:38:45] SELECT * FROM databasehw4.works_on WHERE Pno not in ( SELECT Pno FROM ( (SELECT Pno, essn FROM (select ssn from databasehw4.EMPLOYEE WHERE 
+Fname = 'John' and Lname = 'Smith') as p 
+cross join 
+(select distinct Pno from databasehw4.WORKS_ON) as sp)
+EXCEPT
+(SELECT Pno, Essn FROM databasehw4.WORKS_ON)) AS r ): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EXCEPT
+(SELECT Pno, Essn FROM databasehw4.WORKS_ON)) AS r )' at line 5
+[319, 10:06:55] SELECT SSN FROM employee
+LIMIT 0, 1000
+: Running...
+[319, 10:06:55] SELECT SSN FROM employee
+LIMIT 0, 1000
+: Error Code: 1046. No database selected
+Select the default DB to be used by double-clicking its name in the SCHEMAS list in the sidebar.
+[320, 10:09:08] SELECT SSN FROM databasehw4.employee AS e
+WHERE ssn NOT IN
+(
+SELECT essn FROM
+(
+(SELECT essn, pno FROM (SELECT pno FROM databasehw4.works_on where essn = "123456789") AS p
+CROSS JOIN (SELECT DISTINCT essn FROM databasehw4.works_on) AS w)
+EXCEPT (SELECT essn, pno FROM databasehw4.works_on)
+) AS r
+): Running...
+[320, 10:09:08] SELECT SSN FROM databasehw4.employee AS e
+WHERE ssn NOT IN
+(
+SELECT essn FROM
+(
+(SELECT essn, pno FROM (SELECT pno FROM databasehw4.works_on where essn = "123456789") AS p
+CROSS JOIN (SELECT DISTINCT essn FROM databasehw4.works_on) AS w)
+EXCEPT (SELECT essn, pno FROM databasehw4.works_on)
+) AS r
+): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EXCEPT (SELECT essn, pno FROM databasehw4.works_on)
+) AS r
+)' at line 8
+[321, 10:09:18] SELECT essn, pno FROM databasehw4.works_on
+LIMIT 0, 1000
+: Running...
+[321, 10:09:18] SELECT essn, pno FROM databasehw4.works_on
+LIMIT 0, 1000
+: Fetching...
+[321, 10:09:18] SELECT essn, pno FROM databasehw4.works_on
+LIMIT 0, 1000
+: 16 row(s) returned
+[322, 10:09:36] SELECT DISTINCT essn FROM databasehw4.works_on
+LIMIT 0, 1000
+: Running...
+[322, 10:09:36] SELECT DISTINCT essn FROM databasehw4.works_on
+LIMIT 0, 1000
+: Fetching...
+[322, 10:09:36] SELECT DISTINCT essn FROM databasehw4.works_on
+LIMIT 0, 1000
+: 8 row(s) returned
+[323, 10:09:44] SELECT pno FROM databasehw4.works_on where essn = "123456789"
+LIMIT 0, 1000
+: Running...
+[323, 10:09:44] SELECT pno FROM databasehw4.works_on where essn = "123456789"
+LIMIT 0, 1000
+: Fetching...
+[323, 10:09:44] SELECT pno FROM databasehw4.works_on where essn = "123456789"
+LIMIT 0, 1000
+: 2 row(s) returned
+[324, 10:09:54] SELECT essn, pno FROM (SELECT pno FROM databasehw4.works_on where essn = "123456789")
+LIMIT 0, 1000
+: Running...
+[324, 10:09:54] SELECT essn, pno FROM (SELECT pno FROM databasehw4.works_on where essn = "123456789")
+LIMIT 0, 1000
+: Error Code: 1248. Every derived table must have its own alias
+[325, 10:11:21] (SELECT essn, pno FROM (SELECT pno FROM databasehw4.works_on where essn = "123456789") AS p
+CROSS JOIN (SELECT DISTINCT essn FROM databasehw4.works_on) AS w)
+EXCEPT (SELECT essn, pno FROM databasehw4.works_on): Running...
+[325, 10:11:21] (SELECT essn, pno FROM (SELECT pno FROM databasehw4.works_on where essn = "123456789") AS p
+CROSS JOIN (SELECT DISTINCT essn FROM databasehw4.works_on) AS w)
+EXCEPT (SELECT essn, pno FROM databasehw4.works_on): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EXCEPT (SELECT essn, pno FROM databasehw4.works_on)' at line 3
+[326, 10:15:33] use databasehw4: Running...
+[326, 10:15:33] use databasehw4: 0 row(s) affected
+[327, 10:15:33] SELECT SSN FROM employee AS e
+WHERE ssn NOT IN
+(
+SELECT essn FROM
+(
+(SELECT essn, pno FROM (
+SELECT * FROM
+(SELECT pno FROM works_on where essn = "123456789") AS p
+CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w)
+)
+EXCEPT (SELECT essn, pno FROM works_on)
+) AS r
+): Running...
+[327, 10:15:33] SELECT SSN FROM employee AS e
+WHERE ssn NOT IN
+(
+SELECT essn FROM
+(
+(SELECT essn, pno FROM (
+SELECT * FROM
+(SELECT pno FROM works_on where essn = "123456789") AS p
+CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w)
+)
+EXCEPT (SELECT essn, pno FROM works_on)
+) AS r
+): Error Code: 1248. Every derived table must have its own alias
+[328, 10:16:29] CREATE SCHEMA `databasehw4a`: Running...
+[328, 10:16:29] CREATE SCHEMA `databasehw4a`: Error Code: 1007. Can't create database 'databasehw4a'; database exists
+[329, 10:16:37] use databasehw4: Running...
+[329, 10:16:37] use databasehw4: 0 row(s) affected
+[330, 10:16:37] SELECT SSN FROM employee
+WHERE ssn NOT IN
+(
+SELECT essn FROM
+(
+(SELECT essn, pno FROM (
+SELECT * FROM
+(SELECT pno FROM works_on where essn = "123456789") 
+CROSS JOIN (SELECT DISTINCT essn FROM works_on) )
+)
+EXCEPT (SELECT essn, pno FROM works_on)
+) 
+): Running...
+[330, 10:16:37] SELECT SSN FROM employee
+WHERE ssn NOT IN
+(
+SELECT essn FROM
+(
+(SELECT essn, pno FROM (
+SELECT * FROM
+(SELECT pno FROM works_on where essn = "123456789") 
+CROSS JOIN (SELECT DISTINCT essn FROM works_on) )
+)
+EXCEPT (SELECT essn, pno FROM works_on)
+) 
+): Error Code: 1248. Every derived table must have its own alias
+[331, 10:17:51] SELECT SSN FROM employee AS e
+WHERE ssn NOT IN
+(
+SELECT essn FROM
+(
+(SELECT essn, pno FROM (
+SELECT * FROM
+(SELECT pno FROM works_on where essn = "123456789") AS p
+CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w)
+AS s)
+EXCEPT (SELECT essn, pno FROM works_on)
+) AS r
+): Running...
+[331, 10:17:51] SELECT SSN FROM employee AS e
+WHERE ssn NOT IN
+(
+SELECT essn FROM
+(
+(SELECT essn, pno FROM (
+SELECT * FROM
+(SELECT pno FROM works_on where essn = "123456789") AS p
+CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w)
+AS s)
+EXCEPT (SELECT essn, pno FROM works_on)
+) AS r
+): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EXCEPT (SELECT essn, pno FROM works_on)
+) AS r
+)' at line 11
+[332, 10:18:03] SELECT DISTINCT essn FROM works_on
+LIMIT 0, 1000
+: Running...
+[332, 10:18:03] SELECT DISTINCT essn FROM works_on
+LIMIT 0, 1000
+: Fetching...
+[332, 10:18:03] SELECT DISTINCT essn FROM works_on
+LIMIT 0, 1000
+: 8 row(s) returned
+[333, 10:19:47] SELECT * FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w): Running...
+[333, 10:19:47] SELECT * FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+[334, 10:19:58] SELECT * FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w
+LIMIT 0, 1000
+: Running...
+[334, 10:19:58] SELECT * FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w
+LIMIT 0, 1000
+: Fetching...
+[334, 10:19:58] SELECT * FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w
+LIMIT 0, 1000
+: 16 row(s) returned
+[335, 10:20:20] SELECT essn, pno FROM (
+			SELECT * FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w)
+LIMIT 0, 1000
+: Running...
+[335, 10:20:20] SELECT essn, pno FROM (
+			SELECT * FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w)
+LIMIT 0, 1000
+: Error Code: 1248. Every derived table must have its own alias
+[336, 10:20:45] SELECT essn, pno FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w
+LIMIT 0, 1000
+: Running...
+[336, 10:20:45] SELECT essn, pno FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w
+LIMIT 0, 1000
+: Fetching...
+[336, 10:20:45] SELECT essn, pno FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w
+LIMIT 0, 1000
+: 16 row(s) returned
+[337, 10:22:40] SELECT essn FROM
+	(
+		(-- SELECT essn, pno FROM (
+			SELECT essn, pno FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w)
+		 -- AS s
+         )
+LIMIT 0, 1000
+: Running...
+[337, 10:22:40] SELECT essn FROM
+	(
+		(-- SELECT essn, pno FROM (
+			SELECT essn, pno FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w)
+		 -- AS s
+         )
+LIMIT 0, 1000
+: Error Code: 1248. Every derived table must have its own alias
+[338, 10:22:52] (-- SELECT essn, pno FROM (
+			SELECT essn, pno FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w)
+		  AS s
+         ): Running...
+[338, 10:22:52] (-- SELECT essn, pno FROM (
+			SELECT essn, pno FROM
+			(SELECT pno FROM works_on where essn = "123456789") AS p
+			CROSS JOIN (SELECT DISTINCT essn FROM works_on) AS w)
+		  AS s
+         ): Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AS s
+         )' at line 5
+[339, 10:32:13] CREATE TABLE JohnProject as 
+	SELECT DISTINCT Pno FROM WORKS_ON WHERE essn IN (
+		SELECT DISTINCT SSN FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and 'Lname' = SMITH): Running...
+[339, 10:32:13] CREATE TABLE JohnProject as 
+	SELECT DISTINCT Pno FROM WORKS_ON WHERE essn IN (
+		SELECT DISTINCT SSN FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and 'Lname' = SMITH): Error Code: 1054. Unknown column 'SMITH' in 'where clause'
+[340, 10:32:27] CREATE TABLE JohnProject as 
+	SELECT DISTINCT Pno FROM WORKS_ON WHERE essn IN (
+		SELECT DISTINCT SSN FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'SMITH'): Running...
+[340, 10:32:27] CREATE TABLE JohnProject as 
+	SELECT DISTINCT Pno FROM WORKS_ON WHERE essn IN (
+		SELECT DISTINCT SSN FROM databasehw4.EMPLOYEE WHERE Fname = 'John' and Lname = 'SMITH'): 2 row(s) affected
+Records: 2  Duplicates: 0  Warnings: 0
+[341, 10:34:07] CREATE TABLE AllEmployees as 
+	SELECT DISTINCT Ssn FROM Employee: Running...
+[341, 10:34:07] CREATE TABLE AllEmployees as 
+	SELECT DISTINCT Ssn FROM Employee: 8 row(s) affected
+Records: 8  Duplicates: 0  Warnings: 0
+[342, 10:36:12] CREATE TABLE AllEmpAndJohnProj as 
+	SELECT DISTINCT AllEmployees.ssn, JohnProject.Pno: Running...
+[342, 10:36:12] CREATE TABLE AllEmpAndJohnProj as 
+	SELECT DISTINCT AllEmployees.ssn, JohnProject.Pno: Error Code: 1109. Unknown table 'AllEmployees' in field list
+[343, 10:36:20] CREATE TABLE AllEmployees as 
+	SELECT DISTINCT Ssn FROM Employee: Running...
+[343, 10:36:20] CREATE TABLE AllEmployees as 
+	SELECT DISTINCT Ssn FROM Employee: Error Code: 1050. Table 'AllEmployees' already exists
+[344, 10:36:54] SELECT * FROM AllEmployees
+LIMIT 0, 1000
+: Running...
+[344, 10:36:54] SELECT * FROM AllEmployees
+LIMIT 0, 1000
+: Fetching...
+[344, 10:36:54] SELECT * FROM AllEmployees
+LIMIT 0, 1000
+: 8 row(s) returned
+[345, 10:38:07] CREATE TABLE AllEmpAndJohnProj as 
+	SELECT DISTINCT AllEmployees.ssn, JohnProject.Pno FROM AllEmployees, JohnProject: Running...
+[345, 10:38:07] CREATE TABLE AllEmpAndJohnProj as 
+	SELECT DISTINCT AllEmployees.ssn, JohnProject.Pno FROM AllEmployees, JohnProject: 16 row(s) affected
+Records: 16  Duplicates: 0  Warnings: 0
+[346, 10:38:26] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: Running...
+[346, 10:38:26] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: Fetching...
+[346, 10:38:26] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: 16 row(s) returned
+[347, 10:44:18] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: Running...
+[347, 10:44:18] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: Fetching...
+[347, 10:44:18] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: 16 row(s) returned
+[348, 10:46:31] CREATE TABLE EmpNotOnJohnProj as 
+	SELECT * FROM AllEmpAndJohnProj WHERE 
+		NOT EXISTS
+        ( 
+			SELECT Pno, Essn FROM WORKS_ON 
+            WHERE AllEmpAndJohnProj.Essn = Works_on.Essn and AllEmpAndJohnProj.Pno = Works_on.Pno): Running...
+[348, 10:46:31] CREATE TABLE EmpNotOnJohnProj as 
+	SELECT * FROM AllEmpAndJohnProj WHERE 
+		NOT EXISTS
+        ( 
+			SELECT Pno, Essn FROM WORKS_ON 
+            WHERE AllEmpAndJohnProj.Essn = Works_on.Essn and AllEmpAndJohnProj.Pno = Works_on.Pno): Error Code: 1054. Unknown column 'AllEmpAndJohnProj.Essn' in 'where clause'
+[349, 10:46:44] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: Running...
+[349, 10:46:44] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: Fetching...
+[349, 10:46:44] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: 16 row(s) returned
+[350, 10:47:09] CREATE TABLE EmpNotOnJohnProj as 
+	SELECT * FROM AllEmpAndJohnProj WHERE 
+		NOT EXISTS
+        ( 
+			SELECT Pno, Essn FROM WORKS_ON 
+            WHERE AllEmpAndJohnProj.ssn = Works_on.Essn and AllEmpAndJohnProj.Pno = Works_on.Pno): Running...
+[350, 10:47:09] CREATE TABLE EmpNotOnJohnProj as 
+	SELECT * FROM AllEmpAndJohnProj WHERE 
+		NOT EXISTS
+        ( 
+			SELECT Pno, Essn FROM WORKS_ON 
+            WHERE AllEmpAndJohnProj.ssn = Works_on.Essn and AllEmpAndJohnProj.Pno = Works_on.Pno): 11 row(s) affected
+Records: 11  Duplicates: 0  Warnings: 0
+[351, 10:47:39] SELECT * FROM EmpNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[351, 10:47:39] SELECT * FROM EmpNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[351, 10:47:39] SELECT * FROM EmpNotOnJohnProj
+LIMIT 0, 1000
+: 11 row(s) returned
+[352, 10:53:56] CREATE TABLE SsnNotOnJohnProj as 
+	SELECT SSN FROM EmpNotOnJohnProj: Running...
+[352, 10:53:56] CREATE TABLE SsnNotOnJohnProj as 
+	SELECT SSN FROM EmpNotOnJohnProj: 11 row(s) affected
+Records: 11  Duplicates: 0  Warnings: 0
+[353, 10:54:12] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[353, 10:54:12] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[353, 10:54:12] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 11 row(s) returned
+[354, 10:55:58] CREATE TABLE AllSameProjWithJohn as 
+	SELECT * FROM allEmployees 
+    WHERE NOT EXISTS
+    (
+		SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = AllSameProjWithJohn
+    ): Running...
+[354, 10:55:58] CREATE TABLE AllSameProjWithJohn as 
+	SELECT * FROM allEmployees 
+    WHERE NOT EXISTS
+    (
+		SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = AllSameProjWithJohn
+    ): Error Code: 1054. Unknown column 'AllSameProjWithJohn' in 'where clause'
+[355, 10:56:15] CREATE TABLE AllSameProjWithJohn as 
+	SELECT * FROM allEmployees 
+    WHERE NOT EXISTS
+    (
+		SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = AllSameProjWithJohn.ssn
+    ): Running...
+[355, 10:56:15] CREATE TABLE AllSameProjWithJohn as 
+	SELECT * FROM allEmployees 
+    WHERE NOT EXISTS
+    (
+		SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = AllSameProjWithJohn.ssn
+    ): Error Code: 1054. Unknown column 'AllSameProjWithJohn.ssn' in 'where clause'
+[356, 10:56:37] SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = AllSameProjWithJohn.ssn
+LIMIT 0, 1000
+: Running...
+[356, 10:56:37] SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = AllSameProjWithJohn.ssn
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'AllSameProjWithJohn.ssn' in 'where clause'
+[357, 10:56:47] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[357, 10:56:47] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[357, 10:56:47] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 11 row(s) returned
+[358, 10:57:19] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[358, 10:57:19] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[358, 10:57:19] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 11 row(s) returned
+[359, 10:57:39] SELECT * FROM allEmployees
+LIMIT 0, 1000
+: Running...
+[359, 10:57:39] SELECT * FROM allEmployees
+LIMIT 0, 1000
+: Fetching...
+[359, 10:57:39] SELECT * FROM allEmployees
+LIMIT 0, 1000
+: 8 row(s) returned
+[360, 10:57:52] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[360, 10:57:52] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[360, 10:57:52] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 11 row(s) returned
+[361, 10:58:31] CREATE TABLE SsnNotOnJohnProj as 
+	SELECT DISTINCT SSN FROM EmpNotOnJohnProj: Running...
+[361, 10:58:31] CREATE TABLE SsnNotOnJohnProj as 
+	SELECT DISTINCT SSN FROM EmpNotOnJohnProj: Error Code: 1050. Table 'SsnNotOnJohnProj' already exists
+[362, 10:58:34] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[362, 10:58:34] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[362, 10:58:34] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 11 row(s) returned
+[363, 10:58:46] SELECT DISTINCT SSN FROM EmpNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[363, 10:58:46] SELECT DISTINCT SSN FROM EmpNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[363, 10:58:46] SELECT DISTINCT SSN FROM EmpNotOnJohnProj
+LIMIT 0, 1000
+: 6 row(s) returned
+[364, 10:58:55] CREATE TABLE SsnNotOnJohnProj as 
+	SELECT DISTINCT SSN FROM EmpNotOnJohnProj: Running...
+[364, 10:58:55] CREATE TABLE SsnNotOnJohnProj as 
+	SELECT DISTINCT SSN FROM EmpNotOnJohnProj: Error Code: 1050. Table 'SsnNotOnJohnProj' already exists
+[365, 10:59:00] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[365, 10:59:00] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[365, 10:59:00] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 11 row(s) returned
+[366, 10:59:22] DROP TABLE SsnNotOnJohnProj: Running...
+[366, 10:59:22] DROP TABLE SsnNotOnJohnProj: 0 row(s) affected
+[367, 10:59:26] CREATE TABLE SsnNotOnJohnProj as 
+	SELECT DISTINCT SSN FROM EmpNotOnJohnProj: Running...
+[367, 10:59:26] CREATE TABLE SsnNotOnJohnProj as 
+	SELECT DISTINCT SSN FROM EmpNotOnJohnProj: 6 row(s) affected
+Records: 6  Duplicates: 0  Warnings: 0
+[368, 10:59:29] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[368, 10:59:29] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[368, 10:59:29] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 6 row(s) returned
+[369, 11:00:02] CREATE TABLE AllSameProjWithJohn as 
+	SELECT * FROM allEmployees 
+    WHERE NOT EXISTS
+    (
+		SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = allEmployees.ssn
+    ): Running...
+[369, 11:00:02] CREATE TABLE AllSameProjWithJohn as 
+	SELECT * FROM allEmployees 
+    WHERE NOT EXISTS
+    (
+		SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = allEmployees.ssn
+    ): 2 row(s) affected
+Records: 2  Duplicates: 0  Warnings: 0
+[370, 11:00:21] SELECT * FROM AllSameProjWtihJohn
+LIMIT 0, 1000
+: Running...
+[370, 11:00:21] SELECT * FROM AllSameProjWtihJohn
+LIMIT 0, 1000
+: Error Code: 1146. Table 'databasehw4.allsameprojwtihjohn' doesn't exist
+[371, 11:00:36] SELECT * FROM AllSameProjWtihJohn
+LIMIT 0, 1000
+: Running...
+[371, 11:00:36] SELECT * FROM AllSameProjWtihJohn
+LIMIT 0, 1000
+: Error Code: 1146. Table 'databasehw4.allsameprojwtihjohn' doesn't exist
+[372, 11:00:41] CREATE TABLE AllSameProjWithJohn as 
+	SELECT * FROM allEmployees 
+    WHERE NOT EXISTS
+    (
+		SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = allEmployees.ssn
+    ): Running...
+[372, 11:00:41] CREATE TABLE AllSameProjWithJohn as 
+	SELECT * FROM allEmployees 
+    WHERE NOT EXISTS
+    (
+		SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = allEmployees.ssn
+    ): Error Code: 1050. Table 'AllSameProjWithJohn' already exists
+[373, 11:00:48] SELECT * FROM AllSameProjWithJohn
+LIMIT 0, 1000
+: Running...
+[373, 11:00:48] SELECT * FROM AllSameProjWithJohn
+LIMIT 0, 1000
+: Fetching...
+[373, 11:00:48] SELECT * FROM AllSameProjWithJohn
+LIMIT 0, 1000
+: 2 row(s) returned
+[374, 11:16:43] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[374, 11:16:43] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[374, 11:16:43] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 6 row(s) returned
+[375, 12:15:44] SELECT * FROM allEmployees
+LIMIT 0, 1000
+: Running...
+[375, 12:15:44] SELECT * FROM allEmployees
+LIMIT 0, 1000
+: Fetching...
+[375, 12:15:44] SELECT * FROM allEmployees
+LIMIT 0, 1000
+: 8 row(s) returned
+[376, 12:15:54] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[376, 12:15:54] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[376, 12:15:54] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 6 row(s) returned
+[377, 12:16:43] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[377, 12:16:43] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[377, 12:16:43] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 6 row(s) returned
+[378, 12:17:13] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: Running...
+[378, 12:17:13] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: Fetching...
+[378, 12:17:13] SELECT * FROM AllEmpAndJohnProj
+LIMIT 0, 1000
+: 16 row(s) returned
+[379, 12:17:30] SELECT Pno, Essn FROM WORKS_ON 
+            WHERE AllEmpAndJohnProj.ssn = Works_on.Essn and AllEmpAndJohnProj.Pno = Works_on.Pno
+LIMIT 0, 1000
+: Running...
+[379, 12:17:30] SELECT Pno, Essn FROM WORKS_ON 
+            WHERE AllEmpAndJohnProj.ssn = Works_on.Essn and AllEmpAndJohnProj.Pno = Works_on.Pno
+LIMIT 0, 1000
+: Error Code: 1054. Unknown column 'AllEmpAndJohnProj.ssn' in 'where clause'
+[380, 12:17:56] SELECT Pno, Essn FROM WORKS_ON , AllEmpAndJohnProj
+            WHERE AllEmpAndJohnProj.ssn = Works_on.Essn and AllEmpAndJohnProj.Pno = Works_on.Pno
+LIMIT 0, 1000
+: Running...
+[380, 12:17:56] SELECT Pno, Essn FROM WORKS_ON , AllEmpAndJohnProj
+            WHERE AllEmpAndJohnProj.ssn = Works_on.Essn and AllEmpAndJohnProj.Pno = Works_on.Pno
+LIMIT 0, 1000
+: Error Code: 1052. Column 'Pno' in field list is ambiguous
+[381, 12:18:13] SELECT Pno, Essn FROM WORKS_ON , AllEmpAndJohnProj
+LIMIT 0, 1000
+: Running...
+[381, 12:18:13] SELECT Pno, Essn FROM WORKS_ON , AllEmpAndJohnProj
+LIMIT 0, 1000
+: Error Code: 1052. Column 'Pno' in field list is ambiguous
+[382, 12:18:25] SELECT works_on.Pno, Essn FROM WORKS_ON , AllEmpAndJohnProj
+LIMIT 0, 1000
+: Running...
+[382, 12:18:25] SELECT works_on.Pno, Essn FROM WORKS_ON , AllEmpAndJohnProj
+LIMIT 0, 1000
+: Fetching...
+[382, 12:18:25] SELECT works_on.Pno, Essn FROM WORKS_ON , AllEmpAndJohnProj
+LIMIT 0, 1000
+: 256 row(s) returned
+[383, 12:32:13] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[383, 12:32:13] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[383, 12:32:13] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 6 row(s) returned
+[384, 12:32:37] SELECT * FROM AllSameProjWithJohn
+LIMIT 0, 1000
+: Running...
+[384, 12:32:37] SELECT * FROM AllSameProjWithJohn
+LIMIT 0, 1000
+: Fetching...
+[384, 12:32:37] SELECT * FROM AllSameProjWithJohn
+LIMIT 0, 1000
+: 2 row(s) returned
+[385, 12:32:48] CREATE TABLE AllSameProjWithJohn as 
+	SELECT * FROM allEmployees 
+    WHERE NOT EXISTS
+    (
+		/*Employees not on ANY of John's project*/
+		SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = allEmployees.ssn
+    ): Running...
+[385, 12:32:48] CREATE TABLE AllSameProjWithJohn as 
+	SELECT * FROM allEmployees 
+    WHERE NOT EXISTS
+    (
+		/*Employees not on ANY of John's project*/
+		SELECT * FROM SsnNotOnJohnProj WHERE SsnNotOnJohnProj.ssn = allEmployees.ssn
+    ): Error Code: 1050. Table 'AllSameProjWithJohn' already exists
+[386, 12:33:31] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[386, 12:33:31] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[386, 12:33:31] SELECT * FROM SsnNotOnJohnProj
+LIMIT 0, 1000
+: 6 row(s) returned
+[387, 12:33:48] SELECT * FROM EmpNotOnJohnProj
+LIMIT 0, 1000
+: Running...
+[387, 12:33:48] SELECT * FROM EmpNotOnJohnProj
+LIMIT 0, 1000
+: Fetching...
+[387, 12:33:48] SELECT * FROM EmpNotOnJohnProj
+LIMIT 0, 1000
+: 11 row(s) returned
